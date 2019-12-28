@@ -1,0 +1,6 @@
+I"Ë<p>In this article, I am going to try explain hashing concept. I hope it helps you and you can find your answers.</p>
+
+<h1 id="what-is-hashing">What is hashing?</h1>
+
+<p>Hashing is an important data structure that used in computer science. It solves many problems easily. There are some advantages to use it. It basically has a <em>hash function</em> which is used for mapping data. It speeds up the inserting, deleting, or removing data from hash table.</p>
+:ET

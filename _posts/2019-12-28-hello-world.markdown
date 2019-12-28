@@ -4,7 +4,7 @@ title:  "Hello World!"
 author: Gökhan Özeloğlu
 date:   2019-12-28 21:14:05 +0300
 categories: general
-permalink: "/:categories"
+permalink: "/:categories/hello-world"
 ---
 
 # Introduction
