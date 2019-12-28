@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-28T22:16:49+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gökhan Özeloğlu</title><subtitle>Written by Gökhan Özeloğlu. See [about](https://gozeloglu.github.io/about) for more and contact information.</subtitle><entry><title type="html">Hello World!</title><link href="http://localhost:4000/general.io" rel="alternate" type="text/html" title="Hello World!" /><published>2019-12-28T21:14:05+03:00</published><updated>2019-12-28T21:14:05+03:00</updated><id>http://localhost:4000/hello-world</id><content type="html" xml:base="http://localhost:4000/general.io">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Hello everyone!&lt;/p&gt;
+
+&lt;p&gt;I am Gökhan. I am a computer science student at Hacettepe University. I am 3rd grade. I was plannig to open a personal blog, at the end, I opened this blog, finally! I am using &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; on my blog. I am using default theme, which is &lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;, for now, but maybe I will change it with a new one in the future.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-will-i-share&quot;&gt;What will I share?&lt;/h3&gt;
+
+&lt;p&gt;In this blog, there will be different kind of articles about myself and computer science. I am going to try publish information that I have learned, and I am going to use this blog as a diary or tutorial for computer science related things. Maybe this articles will be helped some people who want to learn new things.&lt;/p&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;You can reach me with different ways.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;gozeloglu@gmail.com&quot;&gt;Gmail&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/gokhanozeloglu/&quot;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/gozeloglu4835&quot;&gt;Twitter&lt;/a&gt; (Sometimes I suspend my account due to not want to waste of my time, so if you cannot reach me out in Twitter, you can use other ways, Gmail or LinkedIn.)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Gökhan Özeloğlu</name></author><summary type="html">Introduction Hello everyone!</summary></entry></feed>
