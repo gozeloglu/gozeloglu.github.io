@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Subprograms | Gökhan Özeloğlu</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Subprograms" />
+<meta name="author" content="Gökhan Özeloğlu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction" />
+<meta property="og:description" content="Introduction" />
+<link rel="canonical" href="http://localhost:4000/general/subprograms" />
+<meta property="og:url" content="http://localhost:4000/general/subprograms" />
+<meta property="og:site_name" content="Gökhan Özeloğlu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-30T12:27:32+03:00" />
+<script type="application/ld+json">
+{"datePublished":"2019-12-30T12:27:32+03:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/general/subprograms"},"url":"http://localhost:4000/general/subprograms","author":{"@type":"Person","name":"Gökhan Özeloğlu"},"description":"Introduction","headline":"Subprograms","dateModified":"2019-12-30T12:27:32+03:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Gökhan Özeloğlu" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Gökhan Özeloğlu</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/archieve">Archieve</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Subprograms</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-12-30T12:27:32+03:00" itemprop="datePublished">Dec 30, 2019
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Gökhan Özeloğlu</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="introduction">Introduction</h1>
+
+<p>In this article, I am going to explain <em>subprograms</em> in programming languages. Subprogram provides some abstraction while building a program. When we write a program, we want to reuse statements in different places and different times. In modern programming language, we collect all statements in a subprogram. It will give us some conveniences like memory space, coding time, and  reusable codes. We call the subprogram from several places in our code blocks and details are hidden by calling only subprogram. Also, this can ensure writing more readable codes.</p>
+
+<h1 id="fundamentals-of-subprograms">Fundamentals of Subprograms</h1>
+
+<ul>
+  <li>Each subprogram has a single entry point.</li>
+  <li>The calling program unit is suspended during the execution of the called subprogram, which impiles that there is only one subprogram in execution at any given time.</li>
+  <li>Control always returns to the caller when the subprogram execution terminates.</li>
+</ul>
+
+<h1 id="definitions">Definitions</h1>
+
+<p><strong>Subprogram definiton:</strong> Describes the interface to and the actions of the subprogram abstraction. There is a difference in Python subprogram definitions. In Python, function definitions can be executable and when you call the function, it will be executed. Let’s look an example.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"If block is executing"</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is not bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Else block is executing"</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">()</span> 
+<span class="c1"># Else block will be executed
+# a is not bigger than 1
+# Else block is executing</span></code></pre></figure>
+
+<p>In this example, a is declared as an integer and its value is 1. After the if-else blocks, we call <code class="highlighter-rouge">func()</code> and program executes <strong>else</strong> block, because <em>“a is not bigger than 1”</em>. So, in this case, function declarations was executed and produced output. If we were declared a with bigger than 1, i.e. 9, the program would be executed <strong>if</strong> block and prints out the <code class="highlighter-rouge">a is bigger than 1</code> <code class="highlighter-rouge">If block is executing</code> messages.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"If block is executing"</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is not bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Else block is executing"</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">()</span> 
+<span class="n">a</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">func</span><span class="p">()</span>
+<span class="c1"># Else block will be executed in both function calls</span></code></pre></figure>
+
+<p>What would happen if we changed the <code class="highlighter-rouge">a</code> value. Nothing! Changing the value after the <strong>if-else</strong> blocks, does not affect the execution of <strong>if-else</strong> statements. <code class="highlighter-rouge">a</code> remains <strong>1</strong>, in this example. So, output of this function is the same for both <code class="highlighter-rouge">func()</code> calls.</p>
+
+<p><strong>Subprogram call:</strong> A request to execute specific subprogram.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="o">...</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Subprogram call</span></code></pre></figure>
+
+<ul>
+  <li>A subprogram is <strong>active</strong> if a subprogram is called, started to execution, but have not terminated yet.</li>
+</ul>
+
+<p><strong>Subprogram header:</strong> The first part of the definition. It includes name of the function and the formal parameters.</p>
+
+<p><code class="highlighter-rouge">def func(params):</code> ==&gt; Python header</p>
+
+<p><code class="highlighter-rouge">int func(params)</code> ==&gt; C header</p>
+
+<p>In some languages, like Python, JavaScript, Ruby, and so on, the subprogram definitions are indicated with a <em>special</em> words, which are <strong>reserved word</strong>. You should start with these kind of <em>reserved words</em> when you declare a subprogram. In Python and Ruby, <code class="highlighter-rouge">def</code> indicates that it is a subprogram, wheares <code class="highlighter-rouge">function</code> in JavaScript.</p>
+
+<p>The <em>body of the subprograms</em> defines the actions. There are several ways of showing body in different languages. In C-based languages, you delimited by using <em>curly brackets</em>. In Ruby, <code class="highlighter-rouge">end</code> statement terminates the body of the subprogram. In Python, indentations play important role.</p>
+
+  </div><a class="u-url" href="/general/subprograms" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Gökhan Özeloğlu</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Gökhan Özeloğlu</li><li><a class="u-email" href="mailto:gozeloglu@gmail.com">gozeloglu@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/gozeloglu"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">gozeloglu</span></a></li><li><a href="https://www.twitter.com/gozeloglu4835"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">gozeloglu4835</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A personal blog!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

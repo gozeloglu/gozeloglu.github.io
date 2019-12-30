@@ -1,0 +1,12 @@
+I"<h1 id="introduction">Introduction</h1>
+
+<p>In this article, I am going to explain <em>subprograms</em> in programming languages. Subprogram provides some abstraction while building a program. When we write a program, we want to reuse statements in different places and different times. In modern programming language, we collect all statements in a subprogram. It will give us some conveniences like memory space, coding time, and  reusable codes. We call the subprogram from several places in our code blocks and details are hidden by calling only subprogram. Also, this can ensure writing more readable codes.</p>
+
+<h1 id="fundamentals-of-subprograms">Fundamentals of Subprograms</h1>
+
+<ul>
+  <li>Each subprogram has a single entry point.</li>
+  <li>The</li>
+</ul>
+
+:ET

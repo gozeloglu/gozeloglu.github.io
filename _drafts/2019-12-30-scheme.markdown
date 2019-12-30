@@ -1,0 +1,15 @@
+---
+layout: post
+title: Functional Programming - Scheme
+author: Gökhan Özeloğlu
+date: 2019-12-30 11:54:38 +0300
+categories: general
+permalink: /:categories/functional-programming-scheme
+---
+
+In this article, I am going to explain functional programming and given some example with *Scheme* language.
+
+# What is functional programming?
+
+Functional programming is a concept which everything is occured with functions. There are some differences between other languages like Java, C, C++, Python and so on. While learning the functional concepts, it might be tough, but if you think of everything as a function, it will be more easy to understand *functional programming concepts*. Some of functional programming languages are Haskell, Scheme, LISP
+
