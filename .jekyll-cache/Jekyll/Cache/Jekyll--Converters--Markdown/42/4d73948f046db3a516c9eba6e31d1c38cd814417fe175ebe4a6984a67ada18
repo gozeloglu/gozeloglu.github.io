@@ -1,0 +1,111 @@
+I"/<h1 id="introduction">Introduction</h1>
+
+<p>In this article, I am going to explain <em>subprograms</em> in programming languages. Subprogram provides some abstraction while building a program. When we write a program, we want to reuse statements in different places and different times. In modern programming language, we collect all statements in a subprogram. It will give us some conveniences like memory space, coding time, and  reusable codes. We call the subprogram from several places in our code blocks and details are hidden by calling only subprogram. Also, this can ensure writing more readable codes.</p>
+
+<h1 id="fundamentals-of-subprograms">Fundamentals of Subprograms</h1>
+
+<ul>
+  <li>Each subprogram has a single entry point.</li>
+  <li>The calling program unit is suspended during the execution of the called subprogram, which impiles that there is only one subprogram in execution at any given time.</li>
+  <li>Control always returns to the caller when the subprogram execution terminates.</li>
+</ul>
+
+<h1 id="definitions">Definitions</h1>
+
+<p><strong>Subprogram definiton:</strong> Describes the interface to and the actions of the subprogram abstraction. There is a difference in Python subprogram definitions. In Python, function definitions can be executable and when you call the function, it will be executed. Let’s look an example.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"If block is executing"</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is not bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Else block is executing"</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">()</span> 
+<span class="c1"># Else block will be executed
+# a is not bigger than 1
+# Else block is executing</span></code></pre></figure>
+
+<p>In this example, a is declared as an integer and its value is 1. After the if-else blocks, we call <code class="highlighter-rouge">func()</code> and program executes <strong>else</strong> block, because <em>“a is not bigger than 1”</em>. So, in this case, function declarations was executed and produced output. If we were declared a with bigger than 1, i.e. 9, the program would be executed <strong>if</strong> block and prints out the <code class="highlighter-rouge">a is bigger than 1</code> <code class="highlighter-rouge">If block is executing</code> messages.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"If block is executing"</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"a is not bigger than 1"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Else block is executing"</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">()</span> 
+<span class="n">a</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">func</span><span class="p">()</span>
+<span class="c1"># Else block will be executed in both function calls</span></code></pre></figure>
+
+<p>What would happen if we changed the <code class="highlighter-rouge">a</code> value. Nothing! Changing the value after the <strong>if-else</strong> blocks, does not affect the execution of <strong>if-else</strong> statements. <code class="highlighter-rouge">a</code> remains <strong>1</strong>, in this example. So, output of this function is the same for both <code class="highlighter-rouge">func()</code> calls.</p>
+
+<p><strong>Subprogram call:</strong> A request to execute specific subprogram.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="o">...</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Subprogram call</span></code></pre></figure>
+
+<ul>
+  <li>A subprogram is <strong>active</strong> if a subprogram is called, started to execution, but have not terminated yet.</li>
+</ul>
+
+<p><strong>Subprogram header:</strong> The first part of the definition. It includes name of the function and the formal parameters.</p>
+
+<p><code class="highlighter-rouge">def func(params):</code> ==&gt; Python header</p>
+
+<p><code class="highlighter-rouge">int func(params)</code> ==&gt; C header</p>
+
+<p>In some languages, like Python, JavaScript, Ruby, and so on, the subprogram definitions are indicated with a <em>special</em> words, which are <strong>reserved word</strong>. You should start with these kind of <em>reserved words</em> when you declare a subprogram. In Python and Ruby, <code class="highlighter-rouge">def</code> indicates that it is a subprogram, wheares <code class="highlighter-rouge">function</code> in JavaScript.</p>
+
+<p>The <em>body of the subprograms</em> defines the actions. There are several ways of showing body in different languages. In C-based languages, you delimited by using <em>curly brackets</em>. In Ruby, <code class="highlighter-rouge">end</code> statement terminates the body of the subprogram. In Python, indentations play important role.</p>
+
+<p><strong>Parameter profile:</strong> It contains the number, order, and types of <em>formal parameters</em>.</p>
+
+<p><strong>Protocol:</strong> Subprogram’s parameter profile and if it is a function, its return type.</p>
+
+<p><code class="highlighter-rouge">fun(int a, char c, float f)</code> ==&gt; Parameter profile</p>
+
+<p><code class="highlighter-rouge">int fun(int a, char c, float f)</code> ==&gt; Protocol</p>
+
+<p>Function declarations in <strong>C</strong> and <strong>C++</strong> are called as <em>protocol</em> and they often place in <em>header files</em>. Also, subprogram declaration provides the protocol, not the body of the subprogram.</p>
+
+<h1 id="parameters">Parameters</h1>
+
+<p>Basically, there are two different ways to access data in subprograms. The first one is accessing nonlocal variables which are defined elsewhere and visibile in subprograms. The second one is passing parameters to subprograms. Accessing nonlocal variables is not a good choose, it leads to some problems. It may reduce the reliability, and it is not a good that we want. We should avoid to access and use nonlocal variables. In the second way, passing parameters, it is more convenient and reliable. When we pass a parameter to subprogram, we actually creates the local variables that are defined in subprograms.</p>
+
+<h4 id="formal-parameters-vs-actual-parameters">Formal Parameters vs. Actual Parameters</h4>
+
+<p>Parameter in <strong>header</strong> is <em>Formal parameter</em> and, generally, called as <em>dummy variable</em>. They are just show that parameter places and, when the subprogram calls they bind to other variables. For instance, if we have a subprogram in Python and declared as <code class="highlighter-rouge">def fun(a, b, c):</code>, in this case, <code class="highlighter-rouge">a, b, c</code> are <em>formal parameters</em>. <em>Actual parameter</em> uses in subprogram call statements, and represents value or address. For example, when we call <code class="highlighter-rouge">fun()</code> function in elsewhere, <code class="highlighter-rouge">fun(1, 2, 3)</code>, in this case, <code class="highlighter-rouge">1, 2, 3</code> are <em>actual parameters</em>.</p>
+
+<p>To bind actual parameters to formal parameters is another important part of the subprograms. Binding can be done in two different ways. The first method is, <strong>positional parameters</strong>. It basically binds the first actual parameter to the first formal parameter, the second actual parameter to the second parameter, and so on. It is a good method, because it is <strong>safe</strong> and <strong>effective</strong>. Nevertheless, if parameter list is long, programmer can make parameter order mistakes. In this case, <strong>keyword parameters</strong> is a good method. The order is not important, but the formal names are important. The main advantage of keyword parameters is order is not important, so parameters can appear in any order and parameter correspondence errors can be avoided. On the other hand, the main disadvantage is programmer must know the formal parameter’s names. <strong>Python, Ada, Fortran 95+</strong> allows the keyword parameters.</p>
+
+<p>Example: <code class="highlighter-rouge">sumer (length=my_length, arr=my_arr, total=my_total)</code> ==&gt; Python (Keyword Parameters)</p>
+
+<p>Python, Ada and Fotran 95+ allows us to combine both positional and keyword parameters. For example, <code class="highlighter-rouge">sumer(my_length, arr=my_arr, total=my_total)</code> is valid. The only restriction is after a keyword parameter is shown in parameter list, all parameters must be keyworded. So, <code class="highlighter-rouge">sumer(length=my_length, arr, total=my_total)</code> is a wrong function call.</p>
+
+<p>Some languages, like C++, Python, Ruby, Ada, PHP, can have <strong>default parameters</strong>. A default value can be used if no actual parameter is passed to the formal parameter in the subprogram header. For instance, we have a Python header:</p>
+
+<p><code class="highlighter-rouge">def save_student(name, surname, age=20)</code></p>
+
+<p>The <code class="highlighter-rouge">save_student</code> function has a default parameter, <code class="highlighter-rouge">age</code>. If you pass a value for <code class="highlighter-rouge">age</code>, this value will be used while execution of the subprogram. When you call <code class="highlighter-rouge">save_student</code> like this, <code class="highlighter-rouge">save_student("jack", "jones", 23)</code>, the age will be 23. But, if you do not any parameter for <code class="highlighter-rouge">age</code>, the subprogram will use <strong>20</strong>. For example, when you call <code class="highlighter-rouge">save_student("jack", "jones")</code>, the <code class="highlighter-rouge">age</code> will be 20. In <strong>C++</strong>, default parameters must be appear last because parameters are <em>positionally</em> associated.</p>
+
+<h1 id="procedures-and-functions">Procedures and Functions</h1>
+
+<p>There are two distinct categories of subprograms: <strong>procedures</strong> and <strong>functions</strong>. Procedures are collections of statements and they affects</p>
+:ET
