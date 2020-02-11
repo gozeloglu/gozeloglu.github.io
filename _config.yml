@@ -22,7 +22,7 @@ title: Gökhan Özeloğlu
 email: gozeloglu@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal blog!
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "gozeloglu.com" # the subpath of your site, e.g. /blog
 url: "https://gozeloglu.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gozeloglu4835
 github_username:  gozeloglu
