@@ -190,3 +190,58 @@ class Solution:
                 
         return counter
 {% endhighlight python %}
+
+## Day 8 - Middle of the Linked List
+
+*Here is the question link : [Week #2 - Middle of the Linked List](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/529/week-2/3290/)*
+
+This question is a classic linked list problem. It says that we need to find middle node of the given linked list. Firstly, I am going to explain my approach and then, I am going to more efficient solution that I learned. My approach is iterative solution. Firstly, I copied `head` node into another `ListNode` object. I should keep my head node of the linked list. Then, I traversed the linked list to find length of the all linked list. After that, I found middle point of the list. Finally, I traversed the linked list until the middle node. Then, I returned it. Space complexity is $O(1)$ and time complexity is $O(n)$. But I am traversing 1.5 times the linked list.
+
+{% highlight c++ %}
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        
+        ListNode *tmpNode = head;
+        
+        int len = 0;
+        
+        while (tmpNode != NULL) {
+            tmpNode = tmpNode -> next;
+            len++;
+        }
+        
+        int mid = len/2;
+        int i = 0;
+        
+        while (i < mid) {
+            head = head -> next;
+            i++;
+        }
+        
+        return head;
+    }
+};
+{% endhighlight c++ %}
+
+Another approach is similar but 2 pointer is being used to traverse one time. We are defining `slowNode` and `fastNode`. While `fastNode` is incrementing by 2, `slowNode` is incrementing by 1. So, when we reach at the end of the linked list with `fastNode`, we also reach middle of the linked list with `slowNode`. So, we do not need to traverse list again. We can reach the middle node with one iteration. Space comlexity is $O(1)$, time complexity is $O(n)$ in this approach. 
+
+{% highlight c++ %}
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode *slowNode = head, *fastNode = head;
+        while (fast && fast->next)
+            slowNode = slow->next, fastNode = fast->next->next;
+        return slowNode;
+    }
+};
+{% endhighlight c++ %}
