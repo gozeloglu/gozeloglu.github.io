@@ -245,3 +245,34 @@ public:
     }
 };
 {% endhighlight c++ %}
+
+## Day 9 - Backspace String Compare
+
+*Here is the question link : [Week #2 - Backspace String Compare](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/529/week-2/3291/)*
+
+This question is similar to brackets problem. The question says that two strings which has **#** character as special are giving and you need to find these are equal or not. **#** means *backspace*. So, it is being deleted the character just before the **#**. I used *stack* data structure. The approach is simple. I declared 2 stack to push or pop characters at each iteration. In `for` loops, I control current character is `#` or not. If character is `#` and the length of the stack is not zero, I pop last pushed character. If the character is not `#`, then I push the character into stack. After applying these operations for both strings, I convert the stack to string. Then, I compare 2 strings. Actually, this solution does not satisfy the $O(1)$ space complexity. My solution has $O(N)$ space complexity. Nevertheless, it satisfies $O(N)$ time complexity.
+
+{% highlight python %}
+class Solution:
+    def backspaceCompare(self, S: str, T: str) -> bool:
+        s_stack, t_stack = [], []
+        
+        for i in range(len(S)):
+            if "#" == S[i]:
+                if len(s_stack) != 0:
+                    s_stack.pop()
+            else:
+                s_stack.append(S[i])
+            
+        for i in range(len(T)):
+            if "#" == T[i]:
+                if len(t_stack) != 0:
+                    t_stack.pop()
+            else:
+                t_stack.append(T[i])
+        
+        if "".join(s_stack) == "".join(t_stack):
+            return True
+        else:
+            return False
+{% endhighlight python %}

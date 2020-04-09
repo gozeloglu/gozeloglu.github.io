@@ -1,4 +1,4 @@
-I"<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
+I"ݥ<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
 
 <h2 id="day-1---single-number">Day 1 - Single Number</h2>
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/528/week-1/3283/">Week #1 - Single Number</a></em></p>
@@ -168,7 +168,7 @@
 
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/529/week-2/3290/">Week #2 - Middle of the Linked List</a></em></p>
 
-<p>This question is a classic linked list problem. It says that we need to find middle node of the given linked list. Firstly, I am going to explain my approach and then, I am going to more efficient solution that I learned. My approach is iterative solution. Firstly, I copied <code class="highlighter-rouge">head</code> node into another <code class="highlighter-rouge">ListNode</code> object. I should keep my head of the linked list</p>
+<p>This question is a classic linked list problem. It says that we need to find middle node of the given linked list. Firstly, I am going to explain my approach and then, I am going to more efficient solution that I learned. My approach is iterative solution. Firstly, I copied <code class="highlighter-rouge">head</code> node into another <code class="highlighter-rouge">ListNode</code> object. I should keep my head node of the linked list. Then, I traversed the linked list to find length of the all linked list. After that, I found middle point of the list. Finally, I traversed the linked list until the middle node. Then, I returned it. Space complexity is $O(1)$ and time complexity is $O(n)$. But I am traversing 1.5 times the linked list.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cm">/**
  * Definition for singly-linked list.
@@ -181,6 +181,7 @@
 <span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="n">ListNode</span><span class="o">*</span> <span class="n">middleNode</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        
         <span class="n">ListNode</span> <span class="o">*</span><span class="n">tmpNode</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
         
         <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -201,4 +202,45 @@
         <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span></code></pre></figure>
+
+<p>Another approach is similar but 2 pointer is being used to traverse one time. We are defining <code class="highlighter-rouge">slowNode</code> and <code class="highlighter-rouge">fastNode</code>. While <code class="highlighter-rouge">fastNode</code> is incrementing by 2, <code class="highlighter-rouge">slowNode</code> is incrementing by 1. So, when we reach at the end of the linked list with <code class="highlighter-rouge">fastNode</code>, we also reach middle of the linked list with <code class="highlighter-rouge">slowNode</code>. So, we do not need to traverse list again. We can reach the middle node with one iteration. Space comlexity is $O(1)$, time complexity is $O(n)$ in this approach.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">middleNode</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">slowNode</span> <span class="o">=</span> <span class="n">head</span><span class="p">,</span> <span class="o">*</span><span class="n">fastNode</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">fast</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span>
+            <span class="n">slowNode</span> <span class="o">=</span> <span class="n">slow</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">,</span> <span class="n">fastNode</span> <span class="o">=</span> <span class="n">fast</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">slowNode</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>
+
+<h2 id="day-9---backspace-string-compare">Day 9 - Backspace String Compare</h2>
+
+<p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/529/week-2/3291/">Week #2 - Backspace String Compare</a></em></p>
+
+<p>This question is similar to brackets problem. The question says that two strings which has <strong>#</strong> character as special are giving and you need to find these are equal or not. <strong>#</strong> means <em>backspace</em>. So, it is being deleted the character just before the <strong>#</strong>. I used <em>stack</em> data structure. The approach is simple. I declared 2 stack to put or pop characters at each iteration. In <code class="highlighter-rouge">for</code> loops, I control current character is <code class="highlighter-rouge">#</code> or not.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">backspaceCompare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">S</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">s_stack</span><span class="p">,</span> <span class="n">t_stack</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="s">"#"</span> <span class="o">==</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s_stack</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">s_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">s_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="s">"#"</span> <span class="o">==</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_stack</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">t_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">t_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        
+        <span class="k">if</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s_stack</span><span class="p">)</span> <span class="o">==</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t_stack</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span></code></pre></figure>
 :ET

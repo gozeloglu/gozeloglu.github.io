@@ -1,68 +1,4 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>30 Days of LeetCoding Challenge Journey - April 2020 | Gökhan Özeloğlu</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="30 Days of LeetCoding Challenge Journey - April 2020" />
-<meta name="author" content="Gökhan Özeloğlu" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Hi! I have not been written any post in my blog for a while. So, I decided to publish 30-day LeetCode Challenge solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution." />
-<meta property="og:description" content="Hi! I have not been written any post in my blog for a while. So, I decided to publish 30-day LeetCode Challenge solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution." />
-<link rel="canonical" href="http://localhost:4000/general/30-days-of-leetcoding-challange" />
-<meta property="og:url" content="http://localhost:4000/general/30-days-of-leetcoding-challange" />
-<meta property="og:site_name" content="Gökhan Özeloğlu" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-02T19:24:43+03:00" />
-<script type="application/ld+json">
-{"@type":"BlogPosting","author":{"@type":"Person","name":"Gökhan Özeloğlu"},"url":"http://localhost:4000/general/30-days-of-leetcoding-challange","headline":"30 Days of LeetCoding Challenge Journey - April 2020","dateModified":"2020-04-02T19:24:43+03:00","datePublished":"2020-04-02T19:24:43+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/general/30-days-of-leetcoding-challange"},"description":"Hi! I have not been written any post in my blog for a while. So, I decided to publish 30-day LeetCode Challenge solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css">
-  <link rel="shortcut icon" type="image/jpg" href="/pp.jpg"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Gökhan Özeloğlu" /><script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      jax: ["input/TeX", "output/HTML-CSS"],
-      tex2jax: {
-        inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
-        displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-      //,
-      //displayAlign: "left",
-      //displayIndent: "2em"
-    });
-  </script>
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-</head>
-<body><header class="site-header" role="banner">
-
-  <div class="wrapper"><a class="site-title" rel="author" href="/">Gökhan Özeloğlu</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/archieve">Archieve</a></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">30 Days of LeetCoding Challenge Journey - April 2020</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="2020-04-02T19:24:43+03:00" itemprop="datePublished">Apr 2, 2020
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Gökhan Özeloğlu</span></span></p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
+I"Ŧ<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
 
 <h2 id="day-1---single-number">Day 1 - Single Number</h2>
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/528/week-1/3283/">Week #1 - Single Number</a></em></p>
@@ -283,7 +219,7 @@
 
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/529/week-2/3291/">Week #2 - Backspace String Compare</a></em></p>
 
-<p>This question is similar to brackets problem. The question says that two strings which has <strong>#</strong> character as special are giving and you need to find these are equal or not. <strong>#</strong> means <em>backspace</em>. So, it is being deleted the character just before the <strong>#</strong>. I used <em>stack</em> data structure. The approach is simple. I declared 2 stack to push or pop characters at each iteration. In <code class="highlighter-rouge">for</code> loops, I control current character is <code class="highlighter-rouge">#</code> or not. If character is <code class="highlighter-rouge">#</code> and the length of the stack is not zero, I pop last pushed character. If the character is not <code class="highlighter-rouge">#</code>, then I push the character into stack. After applying these operations for both strings, I convert the stack to string. Then, I compare 2 strings. Actually, this solution does not satisfy the $O(1)$ space complexity. My solution has $O(N)$ space complexity. Nevertheless, it satisfies $O(N)$ time complexity.</p>
+<p>This question is similar to brackets problem. The question says that two strings which has <strong>#</strong> character as special are giving and you need to find these are equal or not. <strong>#</strong> means <em>backspace</em>. So, it is being deleted the character just before the <strong>#</strong>. I used <em>stack</em> data structure. The approach is simple. I declared 2 stack to push or pop characters at each iteration. In <code class="highlighter-rouge">for</code> loops, I control current character is <code class="highlighter-rouge">#</code> or not. If character is <code class="highlighter-rouge">#</code> and the length of the stack is not zero, I pop last pushed character. If the character is not <code class="highlighter-rouge">#</code>, then I push the character into stack.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">backspaceCompare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">S</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">T</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -307,35 +243,4 @@
             <span class="k">return</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">False</span></code></pre></figure>
-
-  </div><a class="u-url" href="/general/30-days-of-leetcoding-challange" hidden></a>
-</article>
-
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Gökhan Özeloğlu</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">Gökhan Özeloğlu</li><li><a class="u-email" href="mailto:gozeloglu@gmail.com">gozeloglu@gmail.com</a></li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/gozeloglu"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">gozeloglu</span></a></li><li><a href="https://www.twitter.com/gozeloglu4835"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">gozeloglu4835</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p>A personal blog!</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-</body>
-
-</html>
+:ET
