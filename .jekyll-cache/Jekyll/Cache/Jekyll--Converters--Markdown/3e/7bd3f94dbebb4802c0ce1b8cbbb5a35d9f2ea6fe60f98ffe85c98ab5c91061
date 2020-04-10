@@ -1,4 +1,4 @@
-I"ӧ<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
+I"R�<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
 
 <h2 id="day-1---single-number">Day 1 - Single Number</h2>
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/528/week-1/3283/">Week #1 - Single Number</a></em></p>
@@ -243,4 +243,54 @@
             <span class="k">return</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">False</span></code></pre></figure>
+
+<h2 id="day-10---min-stack">Day 10 - Min Stack</h2>
+
+<p><em>Here is the question link : <a href="https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3292/">Week #2 - Min Stack</a></em></p>
+
+<p>There is another data structure question, stack. Stack is a basic and important data structure. Basically, I can explain that stack is a data structure which provides some of functionalities such as <em>push</em>, <em>pop</em>, <em>top</em> in nature. You can access elements directly as in <em>array</em>. You can only access top of the element in stack. So, if you need to access an element instead of top element, you need to <em>pop</em> elements until reaching destination. In this question, it says that write basic functions like <code class="highlighter-rouge">push()</code>, <code class="highlighter-rouge">pop()</code>, <code class="highlighter-rouge">top()</code>, and <code class="highlighter-rouge">getMin()</code>. Also, it expects that retrieving minimum element in constant time. I used 2 different stack to solve retrieving minimum element problem. Because of not accessing element directly, I stored the minimum elements in second stack. I used <code class="highlighter-rouge">list</code> data structure in <strong>Python</strong> because it satisfies some stack operations like <em>push</em> or <em>pop</em>. Let’s say we are pushing some elements, <code class="highlighter-rouge">3, 4, 1, 7, 8, 10, 0</code>. So, our normal stack will be like this:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">|</span> <span class="mi">0</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">0</span> <span class="o">|</span>
+<span class="o">|</span><span class="mi">10</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">8</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">7</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span> 
+<span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>
+<span class="o">|</span><span class="n">___</span><span class="o">|</span>       <span class="o">|</span><span class="n">___</span><span class="o">|</span>
+<span class="n">stack</span> </code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MinStack</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span> <span class="o">=</span> <span class="p">[]</span>        
+
+    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">last_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">last_val</span><span class="p">)</span>
+        
+
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">None</span>
+        
+
+    <span class="k">def</span> <span class="nf">getMin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">None</span></code></pre></figure>
 :ET

@@ -276,3 +276,57 @@ class Solution:
         else:
             return False
 {% endhighlight python %}
+
+## Day 10 - Min Stack
+
+*Here is the question link : [Week #2 - Min Stack](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3292/)*
+
+There is another data structure question, stack. Stack is a basic and important data structure. Basically, I can explain that stack is a data structure which provides some of functionalities such as *push*, *pop*, *top* in nature. You can access elements directly as in *array*. You can only access top of the element in stack. So, if you need to access an element instead of top element, you need to *pop* elements until reaching destination. In this question, it says that write basic functions like `push()`, `pop()`, `top()`, and `getMin()`. Also, it expects that retrieving minimum element in constant time. I used 2 different stack to solve retrieving minimum element problem. Because of not accessing element directly, I stored the minimum elements in second stack. I used `list` data structure in **Python** because it satisfies some stack operations like *push* or *pop*. Let's say we are pushing some elements, `3, 4, 1, 7, 8, 10, 0`. So, our normal stack will be like this:
+
+{% highlight python %}
+
+| 0 |       | 0 |
+|10 |       | 1 |
+| 8 |       | 1 |
+| 7 |       | 1 |
+| 1 |       | 1 |
+| 4 |       | 3 | 
+| 3 |       | 3 |
+|___|       |___|
+stack      minStack
+{% endhighlight python %}
+So, I can access the minimum element by just removing top element from `minStack`.
+{% highlight python %}
+class MinStack:
+
+    def __init__(self):
+        self.stack = []
+        self.minStack = []        
+
+    def push(self, x: int) -> None:
+        self.stack.append(x)
+        if len(self.minStack) == 0:
+            self.minStack.append(x)
+        else:
+            if self.minStack[-1] > x:
+                self.minStack.append(x)
+            else:
+                last_val = self.minStack[-1]
+                self.minStack.append(last_val)
+        
+    def pop(self) -> None:
+        if len(self.stack) != 0:
+            self.stack.pop()
+            self.minStack.pop()
+
+    def top(self) -> int:
+        if len(self.stack) != 0:
+            return self.stack[-1]
+        return None
+        
+
+    def getMin(self) -> int:
+        if len(self.minStack) != 0:
+            return self.minStack[-1]
+        return None
+{% endhighlight python %}
