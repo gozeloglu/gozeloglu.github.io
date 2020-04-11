@@ -330,3 +330,33 @@ class MinStack:
             return self.minStack[-1]
         return None
 {% endhighlight python %}
+
+## Day 11 - Diameter of Binary Tree
+
+*Here is the question link : [Week #2 - Diameter of Binary Tree](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3293/)*
+
+This is a binary tree question. Binary tree is one of the most popular data structure which is constructed by a root and nodes. Each node can have 2 children at most. One or zero child nodes can be occurred in binary tree. If a node has no child, it can be called as *leaf node*. In this question, it says that we need to find maximum length of the binary tree diameter. Diameter means that the longest path of the tree. The path might be in between any two nodes. The basic approach is finding height of the nodes and selecting maximum length in each of them. I used helper function, `height()`.
+
+**Note: You can find the more information here :** [Duke University - CPS100](https://www2.cs.duke.edu/courses/spring00/cps100/assign/trees/diameter.html)
+{% highlight python %}
+class Solution:
+    
+    def height(self, root: TreeNode) -> int:
+        if root is None:
+            return 0
+        
+        return 1 + max(self.height(root.left), self.height(root.right))
+    
+    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+        
+        if root is None:
+            return 0
+        
+        l_height = self.height(root.left)
+        r_height = self.height(root.right)
+        
+        l_dia = self.diameterOfBinaryTree(root.left)
+        r_dia = self.diameterOfBinaryTree(root.right)
+        
+        return max(l_height + r_height, max(l_dia, r_dia))
+{% endhighlight python %}

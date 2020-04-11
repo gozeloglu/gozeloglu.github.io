@@ -1,4 +1,4 @@
-I"IÀ<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
+I"ÕØ<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
 
 <h2 id="day-1---single-number">Day 1 - Single Number</h2>
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/528/week-1/3283/">Week #1 - Single Number</a></em></p>
@@ -248,7 +248,19 @@
 
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3292/">Week #2 - Min Stack</a></em></p>
 
-<p>There is another data structure question, stack. Stack is a basic and important data structure. Basically, I can explain that stack is a data structure which provides some of functionalities such as <em>push</em>, <em>pop</em>, <em>top</em> in nature. You can access elements directly as in <em>array</em>. You can only access top of the element in stack. So, if you need to access an element instead of top element, you need to <em>pop</em> elements until reaching destination. In this question, it says that write basic functions like <code class="highlighter-rouge">push()</code>, <code class="highlighter-rouge">pop()</code>, <code class="highlighter-rouge">top()</code>, and <code class="highlighter-rouge">getMin()</code>. Also, it expects that retrieving minimum element in constant time. I used 2 different stack to solve retrieving minimum element problem.</p>
+<p>There is another data structure question, stack. Stack is a basic and important data structure. Basically, I can explain that stack is a data structure which provides some of functionalities such as <em>push</em>, <em>pop</em>, <em>top</em> in nature. You cannot access elements directly as in <em>array</em>. You can only access top of the element in stack. So, if you need to access an element instead of top element, you need to <em>pop</em> elements until reaching destination. In this question, it says that write basic functions like <code class="highlighter-rouge">push()</code>, <code class="highlighter-rouge">pop()</code>, <code class="highlighter-rouge">top()</code>, and <code class="highlighter-rouge">getMin()</code>. Also, it expects that retrieving minimum element in constant time. I used 2 different stack to solve retrieving minimum element problem. Because of not accessing element directly, I stored the minimum elements in second stack. I used <code class="highlighter-rouge">list</code> data structure in <strong>Python</strong> because it satisfies some stack operations like <em>push</em> or <em>pop</em>. Letâ€™s say we are pushing some elements, <code class="highlighter-rouge">3, 4, 1, 7, 8, 10, 0</code>. So, our normal stack will be like this:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">|</span> <span class="mi">0</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">0</span> <span class="o">|</span>
+<span class="o">|</span><span class="mi">10</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">8</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">7</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span> 
+<span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>       <span class="o">|</span> <span class="mi">3</span> <span class="o">|</span>
+<span class="o">|</span><span class="n">___</span><span class="o">|</span>       <span class="o">|</span><span class="n">___</span><span class="o">|</span>
+<span class="n">stack</span>      <span class="n">minStack</span></code></pre></figure>
+
+<p>So, I can access the minimum element by just removing top element from <code class="highlighter-rouge">minStack</code>.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MinStack</span><span class="p">:</span>
 
@@ -267,7 +279,6 @@
                 <span class="n">last_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">last_val</span><span class="p">)</span>
         
-
     <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
@@ -283,4 +294,33 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">minStack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">None</span></code></pre></figure>
+
+<h2 id="day-11---diameter-of-binary-tree">Day 11 - Diameter of Binary Tree</h2>
+
+<p><em>Here is the question link : <a href="https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3293/">Week #2 - Diameter of Binary Tree</a></em></p>
+
+<p>This is a binary tree question. Binary tree is one of the most popular data structure which is constructed by a root and nodes. Each node can have 2 children at most. One or zero child nodes can be occurred in binary tree. In this question, it says that we need to find maximum length of binary tree diameter. Diameter means that the longest path of the tree. The path might be in any two nodes. The basic approach is finding height of the nodes and selecting maximum length in each of them.</p>
+
+<p><strong>Note: You can find the more information here :</strong> <a href="https://www2.cs.duke.edu/courses/spring00/cps100/assign/trees/diameter.html">Duke University - CPS100</a></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">diameterOfBinaryTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        
+        <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        
+        <span class="n">l_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="n">r_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        
+        <span class="n">l_dia</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">diameterOfBinaryTree</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="n">r_dia</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">diameterOfBinaryTree</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">l_height</span> <span class="o">+</span> <span class="n">r_height</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">l_dia</span><span class="p">,</span> <span class="n">r_dia</span><span class="p">))</span></code></pre></figure>
 :ET
