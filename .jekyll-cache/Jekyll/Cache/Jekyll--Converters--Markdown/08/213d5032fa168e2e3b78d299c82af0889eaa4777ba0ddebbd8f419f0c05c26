@@ -1,4 +1,4 @@
-I"NØ<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
+I"“ç<p>Hi! I have not been written any post in my blog for a while. So, I decided to publish <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/">30-day LeetCode Challenge</a> solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.</p>
 
 <h2 id="day-1---single-number">Day 1 - Single Number</h2>
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/528/week-1/3283/">Week #1 - Single Number</a></em></p>
@@ -168,7 +168,7 @@
 
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/529/week-2/3290/">Week #2 - Middle of the Linked List</a></em></p>
 
-<p>This question is a classic linked list problem. It says that we need to find middle node of the given linked list. Firstly, I am going to explain my approach and then, I am going to more efficient solution that I learned. My approach is iterative solution. Firstly, I copied <code class="highlighter-rouge">head</code> node into another <code class="highlighter-rouge">ListNode</code> object. I should keep my head node of the linked list. Then, I traversed the linked list to find length of the all linked list. After that, I found middle point of the list. Finally, I traversed the linked list until the middle node. Then, I returned it. Space complexity is $O(1)$ and time complexity is $O(n)$. But I am traversing 1.5 times the linked list.</p>
+<p>This question is a classic linked list problem. It says that we need to find middle node of the given linked list. Firstly, I am going to explain my approach and then, I am going to more efficient solution that I learned. My approach is iterative solution. Firstly, I copied <code class="highlighter-rouge">head</code> node into another <code class="highlighter-rouge">ListNode</code> object. I should keep my head node of the linked list. Then, I traversed the linked list to find length of the all linked list. After that, I found middle point of the list. Finally, I traversed the linked list until the middle node. Then, I returned it. Space complexity is $O(1)$ and time complexity is $O(n)$. But I am traversing 1.5 times the linked list. I solved the question with C++, because using <em>pointer</em> is easy to solve and understand linked list.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cm">/**
  * Definition for singly-linked list.
@@ -299,9 +299,9 @@
 
 <p><em>Here is the question link : <a href="https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3293/">Week #2 - Diameter of Binary Tree</a></em></p>
 
-<p>This is a binary tree question. Binary tree is one of the most popular data structure which is constructed by a root and nodes. Each node can have 2 children at most. One or zero child nodes can be occurred in binary tree. In this question, it says that we need to find maximum length of binary tree diameter. Diameter means that the longest path of the tree. The path might be in any two nodes.</p>
+<p>This is a binary tree question. Binary tree is one of the most popular data structure which is constructed by a root and nodes. Each node can have 2 children at most. One or zero child nodes can be occurred in binary tree. If a node has no child, it can be called as <em>leaf node</em>. In this question, it says that we need to find maximum length of the binary tree diameter. Diameter means that the longest path of the tree. The path might be in between any two nodes. The basic approach is finding height of the nodes and selecting maximum length in each of them. I used helper function, <code class="highlighter-rouge">height()</code>.</p>
 
-<p><strong>Note: You can find the more information here :</strong> https://www2.cs.duke.edu/courses/spring00/cps100/assign/trees/diameter.html</p>
+<p><strong>Note: You can find the more information here :</strong> <a href="https://www2.cs.duke.edu/courses/spring00/cps100/assign/trees/diameter.html">Duke University - CPS100</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
     
@@ -323,4 +323,28 @@
         <span class="n">r_dia</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">diameterOfBinaryTree</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
         
         <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">l_height</span> <span class="o">+</span> <span class="n">r_height</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">l_dia</span><span class="p">,</span> <span class="n">r_dia</span><span class="p">))</span></code></pre></figure>
+
+<h2 id="day-12---last-stone-weight">Day 12 - Last Stone Weight</h2>
+
+<p><em>Here is the question link : <a href="https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3297/">Week #2 - Last Stone Weight</a></em></p>
+
+<p>This is a question which can be solved with <em>heap</em>. But, I solved the question in another way. The question says that you have stones, you are selecting 2 stones and smashing them. Letâ€™s say you choosed 2 stones with $s_1$ and $s_2$. If $s_1$ &gt; $s_2$ in terms of weights, then, you will have $s_1 - s_2$ stone at the end. If two stones have the same weight, they will be destroyed both of them. My approach is sorting array after smashing the stones. I am taking last two elements which are the biggest stones. Then, I am subtracting them and adding into array as a new stone. I am going to do these steps until length of the stones are one or zero.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">lastStoneWeight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stones</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">stones</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">stones</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+            <span class="n">stone_1</span><span class="p">,</span> <span class="n">stone_2</span> <span class="o">=</span> <span class="n">stones</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">stones</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">new_stone</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stone_1</span> <span class="o">-</span> <span class="n">stone_2</span><span class="p">)</span>
+            <span class="n">stones</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">stones</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            
+            <span class="k">if</span> <span class="n">new_stone</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">stones</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_stone</span><span class="p">)</span>
+                
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">stones</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">stones</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></code></pre></figure>
 :ET

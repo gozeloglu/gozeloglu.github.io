@@ -195,7 +195,7 @@ class Solution:
 
 *Here is the question link : [Week #2 - Middle of the Linked List](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/529/week-2/3290/)*
 
-This question is a classic linked list problem. It says that we need to find middle node of the given linked list. Firstly, I am going to explain my approach and then, I am going to more efficient solution that I learned. My approach is iterative solution. Firstly, I copied `head` node into another `ListNode` object. I should keep my head node of the linked list. Then, I traversed the linked list to find length of the all linked list. After that, I found middle point of the list. Finally, I traversed the linked list until the middle node. Then, I returned it. Space complexity is $O(1)$ and time complexity is $O(n)$. But I am traversing 1.5 times the linked list.
+This question is a classic linked list problem. It says that we need to find middle node of the given linked list. Firstly, I am going to explain my approach and then, I am going to more efficient solution that I learned. My approach is iterative solution. Firstly, I copied `head` node into another `ListNode` object. I should keep my head node of the linked list. Then, I traversed the linked list to find length of the all linked list. After that, I found middle point of the list. Finally, I traversed the linked list until the middle node. Then, I returned it. Space complexity is $O(1)$ and time complexity is $O(n)$. But I am traversing 1.5 times the linked list. I solved the question with C++, because using *pointer* is easy to solve and understand linked list.
 
 {% highlight c++ %}
 /**
@@ -359,4 +359,30 @@ class Solution:
         r_dia = self.diameterOfBinaryTree(root.right)
         
         return max(l_height + r_height, max(l_dia, r_dia))
+{% endhighlight python %}
+
+## Day 12 - Last Stone Weight
+
+*Here is the question link : [Week #2 - Last Stone Weight](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3297/)*
+
+This is a question which can be solved with *heap*. But, I solved the question in another way. The question says that you have stones, you are selecting 2 stones and smashing them. Let's say you selected 2 stones with $s_1$ and $s_2$. If $s_1$ > $s_2$ in terms of weights, then, you will have $s_1 - s_2$ stone at the end. If two stones have the same weight, they will be destroyed both of them. My approach is sorting array after smashing the stones. I am taking last two elements which are the biggest stones. Then, I am subtracting them and adding into array as a new stone. I am going to do these steps until length of the stones are one or zero. If final stones array does not have stone, it just returns zero. Otherwise, it returns the element. 
+
+{% highlight python %}
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+
+        while len(stones) > 1:
+            stones.sort()
+            stone_1, stone_2 = stones[-1], stones[-2]
+            new_stone = abs(stone_1 - stone_2)
+            stones.pop()
+            stones.pop()
+            
+            if new_stone != 0:
+                stones.append(new_stone)
+                
+        if len(stones) == 0:
+            return 0
+        else:
+            return stones[0]
 {% endhighlight python %}
