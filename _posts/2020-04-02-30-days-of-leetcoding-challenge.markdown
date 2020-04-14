@@ -386,3 +386,42 @@ class Solution:
         else:
             return stones[0]
 {% endhighlight python %}
+
+## Day 13 - Contiguous Array
+
+*Here is the question link : [Week #2 - Contiguous Array](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3298/)*
+
+## Day 14 - Perform String Shifts
+
+*Here is the question link : [Week #2 - Perform String Shifts](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3299/)*
+
+This is a string question. The question says that a string is given with a matrix. Matrix includes shifting directions and amounts. We need to find final string after performing each shifting operation. My approach is calculating final shifting direction and amount. I do not prefer the perform shifhting step by step, because it makes slower the program. While calculating the shifting amount, I assumed that 0 is -1 and 1 is +1. So, I can decide to direction of the shifting. If the result is **negative**, the direction is **left**. If the result is **positive**, the direction is **right**. After calculating amount, I compare the length of the string and amount. If `total_shift % len(s) == 0`, string can be returned. Because there is no need to shift string. Otherwise, program continue with creating a new string and adding characters into it. I also take modulus because the amount could exceed the string length. Then, I add the characters into `new_str`.
+
+{% highlight python %}
+class Solution:
+    def stringShift(self, s: str, shift: List[List[int]]) -> str:
+        total_shift = 0
+        for ss in shift:
+            if ss[0] == 0:
+                total_shift -= ss[1]
+            else:
+                total_shift += ss[1]
+                
+        if total_shift % len(s) == 0:
+            return s
+        
+        new_str = ""
+        
+        if total_shift < 0:
+            i = abs(total_shift) % len(s)
+            new_str = s[i:]
+            for j in range(i):
+                new_str += s[j]
+        else:
+            i = total_shift % len(s)
+            new_str = s[len(s)-i:]
+            for j in range(len(s)-i):
+                new_str += s[j]
+                
+        return new_str
+{% endhighlight python %}
