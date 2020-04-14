@@ -391,6 +391,30 @@ class Solution:
 
 *Here is the question link : [Week #2 - Contiguous Array](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3298/)*
 
+This question is a little bit similar to *Maximum Subarray* question. The question says that you have an array which includes 1 and 0 elements and find the maximum length of the contiguous subarray. I assumed that 1 is +1, 0 is -1. So, I can sum the values and find length of the subarray. Actually, there are two different situations. The first one is straight one that the sum is zero. The second one is sum is not zero. My approach is using `dict` and storing lengths in this `dict`. If the counter is in the `dict`, we just update the `max_len`. 
+
+{% highlight python %}
+class Solution:
+    def findMaxLength(self, nums: List[int]) -> int:
+        
+        counter = 0
+        max_len = 0
+        d = {0:0}
+        
+        for i in range(len(nums)):
+            if nums[i] == 0:
+                counter -= 1
+                
+            else:
+                counter += 1
+                
+            if counter in d:
+                max_len = max(max_len, (i+1) - d[counter])
+            else:
+                d[counter] = i+1
+        return max_len
+{% endhighlight python %}
+
 ## Day 14 - Perform String Shifts
 
 *Here is the question link : [Week #2 - Perform String Shifts](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/529/week-2/3299/)*
