@@ -449,3 +449,66 @@ class Solution:
                 
         return new_str
 {% endhighlight python %}
+
+## Day 15 - Product of Array Except Self
+
+*Here is the question link : [Week #2 - Product of Array Except Self](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/530/week-3/3300/)*
+
+This question is about arrays. The question says that rearrange the given array with product of the all elements except current element. For example, if the array is `[1,2,3,4,5]`, then our result will be `[60, 30, 20, 15, 12]`. I handled three different cases. The first case is all numbers can be non-zero elements. In this case, we can multiply all elements and divide this number with each numbers. Let's say our array is `[1,2,3,4,5]`. So, the product of the all numbers is **60**. Now we can change with elements by dividing each element. 
+
+{% highlight python %}
+arr : [1,2,3,4,5]
+product : 120
+arr : [120/1, 2, 3, 4, 5]
+arr : [120, 120/2, 3, 4, 5]
+arr : [120, 60, 120/3, 4, 5]
+arr : [120, 60, 40, 120/4, 5]
+arr : [120, 60, 40, 30, 120/5]
+arr : [120, 60, 40, 30, 20]
+{% endhighlight python %}
+
+But there can be 0 in this array and this will cause `divide by zero` error. The second case, there can be only one zero in given array. Let's say our array is `[0,1,2,3,4,5]`. The product of the array will be 0 and we can put zero into all noz-zero elements except zero. Because the product is **120** except zero. the final array is `[120,0,0,0,0,0]`. The third case is there can be zero more than 1 in array. In this case, all elements will be zero. Let's say our array is `[0,0,1,2,3,4,5]`. 
+
+{% highlight python %}
+arr : [0,0,1,2,3,4,5]
+---------------------
+arr : [0,0,1,2,3,4,5]
+arr : [0,0,1,2,3,4,5]
+arr : [0,0,0,2,3,4,5]
+arr : [0,0,0,0,3,4,5]
+arr : [0,0,0,0,0,4,5]
+arr : [0,0,0,0,0,0,5]
+arr : [0,0,0,0,0,0,0]
+{% endhighlight python %}
+
+In all situations, there will be at least 1 zero element and this will make zero the product.
+
+{% highlight python %}
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        product = 1
+        zero_count = 0
+        for i in nums:
+            if i == 0:
+                zero_count += 1
+                continue
+            if zero_count < 2:
+                product *= i
+            else:
+                product = 0
+                break
+
+        # Just put zero to all elements
+        if zero_count >= 2:
+            return [0]*len(nums)
+
+        for i in range(len(nums)):
+            if nums[i] == 0 and zero_count == 1:
+                nums[i] = product
+            elif nums[i] != 0 and zero_count == 0:
+                nums[i] = (product//nums[i])
+            else:
+                nums[i] = 0        
+            
+        return nums
+{% endhighlight python %}
