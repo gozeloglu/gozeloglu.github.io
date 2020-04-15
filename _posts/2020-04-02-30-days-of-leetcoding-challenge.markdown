@@ -452,7 +452,7 @@ class Solution:
 
 ## Day 15 - Product of Array Except Self
 
-*Here is the question link : [Week #2 - Product of Array Except Self](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/530/week-3/3300/)*
+*Here is the question link : [Week #3 - Product of Array Except Self](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/530/week-3/3300/)*
 
 This question is about arrays. The question says that rearrange the given array with product of the all elements except current element. For example, if the array is `[1,2,3,4,5]`, then our result will be `[60, 30, 20, 15, 12]`. I handled three different cases. The first case is all numbers can be non-zero elements. In this case, we can multiply all elements and divide this number with each numbers. Let's say our array is `[1,2,3,4,5]`. So, the product of the all numbers is **60**. Now we can change with elements by dividing each element. 
 
