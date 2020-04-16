@@ -512,3 +512,48 @@ class Solution:
             
         return nums
 {% endhighlight python %}
+
+## Day 16 - Valid Parenthesis String
+
+*Here is the question link : [Week #2 - Valid Parenthesis String](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/530/week-3/3301/)*
+
+This is a classic paranthesis question. There is a modification in this question differently in famous one. There are *left* and *right* paranthesis and also *asterisks(\*)* character. We can assume that *asterisks* can be *left paranthesis*, *right paranthesis*, or *empty* string. If there would not have been *asterisks* in given character sequence, we can simply use stack and stack operations, pop and push. I still used stack in this question with a little bit modification. Firstly, I checked the string is empty or not. Empty string is valid, so I returned `True`. Then, I defined two stacks which one is for storing parenthesis, the other one is for storing asterisks. Then, I traversed the given string and pushed the *left paranthesis* with index. Also, I pushed the *asterisks* into another stack with index. When *right paranthesis* came, I need to pop *left paranthesis* if there is in stack. If there is not *left paranthesis*, I need to pop *asterisks*. If both *left paranthesis* and *asterisks* are out, string cannot be balanced and return `False`. When all characters are traversed in given string, the string is balanced and valid if there is not any *left paranthesis*. But, there might be *left paranthesis*, then, we need to look at *asterisks* to make them balance. In this controll, indexes are important. The *asterisks* character's index cannot be lower than *left paranthesis* index. Also, there should be at least as many *asterisks* as the number of *left paranthesis*.
+
+{% highlight python %}
+class Solution:
+    def checkValidString(self, s: str) -> bool:
+        
+        if len(s) == 0:
+            return True
+        
+        parent_stack = []
+        asterisk_stack = []
+        
+        for i in range(len(s)):
+            if s[i] == "(":
+                parent_stack.append([s[i], i])
+            elif s[i] == "*":
+                asterisk_stack.append([s[i], i])
+            elif s[i] == ")":
+                if len(parent_stack) != 0:
+                    parent_stack.pop()
+                elif len(asterisk_stack) != 0:
+                    asterisk_stack.pop()
+                else:
+                    return False
+            
+        
+        if len(parent_stack) == 0:
+            return True
+        
+        i = 0 
+        while len(parent_stack) != 0:
+            tmp_prnt = parent_stack.pop()
+            if len(asterisk_stack) > 0:
+                tmp_ast = asterisk_stack.pop()
+                if tmp_ast[1] < tmp_prnt[1]:
+                    return False
+            else:
+                return False
+        return True
+{% endhighlight python %}
