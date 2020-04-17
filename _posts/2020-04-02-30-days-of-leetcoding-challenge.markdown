@@ -557,3 +557,46 @@ class Solution:
                 return False
         return True
 {% endhighlight python %}
+
+## Day 17 - Number of Islands
+
+*Here is the question link : [Week #3 - Number of Islands](https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/530/week-3/3302/)*
+
+This is a graph question. The question says that you will have a grid which is two-dimensional. **1** represents **lands** and **0** represents **water**. We need to find number of islands. Only vertical and horizontal directions are valid for being island. I used **depth first search(DFS)** algorithm to count number of islands. I added two functions to make easy DFS steps. Basically, I am starting on $(0, 0)$ point on the grid and traversing the grid. `is_valid` function just controlls the current point is valid or not in terms of out of bounds, not visited before and is land. `DFS` is a recursive function. `rows` and `cols` are possible movements in grid.
+
+{% highlight python %}
+class Solution:
+    
+    def is_valid(self, i, j, col, row, visited, grid):
+        return (i >= 0 and i < row and j >= 0 and j < col and not visited[i][j] and grid[i][j])
+        
+    def numIslands(self, grid: List[List[str]]) -> int:
+        
+        for i in range(len(grid)):
+            grid[i] = list(map(int, grid[i]))
+            
+        visited = [[0 for j in range(len(grid[0]))] for i in range(len(grid))]
+        
+        counter = 0
+        
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                
+                if visited[i][j] == 0 and grid[i][j] == 1:
+                    visited = self.DFS(i, j, visited, grid)
+                    counter += 1
+       
+        return counter
+    
+    def DFS(self, i, j, visited, grid):
+        rows = [-1, 0, 0, 1]
+        cols = [0, -1, 1, 0]
+        
+        visited[i][j] = 1
+        
+        for k in range(4):
+            if self.is_valid(i+rows[k], j+cols[k], len(grid[0]), len(grid), visited, grid):
+                self.DFS(i+rows[k], j+cols[k], visited, grid)
+                
+        return visited
+{% endhighlight python %}
