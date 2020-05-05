@@ -1,4 +1,162 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-17T13:24:21+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gökhan Özeloğlu</title><subtitle>A personal blog!</subtitle><entry><title type="html">30 Days of LeetCoding Challenge Journey - April 2020</title><link href="http://localhost:4000/general/30-days-of-leetcoding-challange" rel="alternate" type="text/html" title="30 Days of LeetCoding Challenge Journey - April 2020" /><published>2020-04-02T19:24:43+03:00</published><updated>2020-04-02T19:24:43+03:00</updated><id>http://localhost:4000/general/30-days-of-leetcoding-challenge</id><content type="html" xml:base="http://localhost:4000/general/30-days-of-leetcoding-challange">&lt;p&gt;Hi! I have not been written any post in my blog for a while. So, I decided to publish &lt;a href=&quot;https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/&quot;&gt;30-day LeetCode Challenge&lt;/a&gt; solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-05T18:26:19+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Gökhan Özeloğlu</title><subtitle>A personal blog!</subtitle><entry><title type="html">JavaScript - Intro</title><link href="http://localhost:4000/general/javascript-intro" rel="alternate" type="text/html" title="JavaScript - Intro" /><published>2020-05-05T15:25:09+03:00</published><updated>2020-05-05T15:25:09+03:00</updated><id>http://localhost:4000/general/javascript-journey</id><content type="html" xml:base="http://localhost:4000/general/javascript-intro">&lt;p&gt;I have started to learn JavaScript from scratch and I decided to write a blog to share what I learned in this process.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-javascript&quot;&gt;What is JavaScript?&lt;/h2&gt;
+
+&lt;p&gt;JavaScript is a programmin language that gives behavior to the programs. We give some functionalities to the web pages or mobile application with JavaScript.&lt;/p&gt;
+
+&lt;h2 id=&quot;printing-output&quot;&gt;Printing output&lt;/h2&gt;
+
+&lt;p&gt;We start programming with “Hello World!” message. To print out something on the screen is important to write “Hello World” message. We use &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; function to print out some messages on the screen. We can write “Hello World” message like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;console.log(&quot;Hello World&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;comments&quot;&gt;Comments&lt;/h2&gt;
+
+&lt;p&gt;JavaScript comments are similar to C-like languages. There are 2 options to write comments in our codes.&lt;/p&gt;
+
+&lt;h4 id=&quot;inline-comments&quot;&gt;&lt;strong&gt;Inline Comments&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Any text between &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; is ignored by JavaScript and does not affect the program.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;This message will be visible&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// This line will not be visible&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;block-comments&quot;&gt;&lt;strong&gt;Block Comments&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Any text between &lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt; is ignored by JavaScript and does not affect the program.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;This message will be visible&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*
+* This block will not be visible
+* console.log(&quot;This block will be ignored);
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;identifiers&quot;&gt;Identifiers&lt;/h2&gt;
+
+&lt;p&gt;Simply, identifiers are the variable that we defined and is being used in the program. There are some rules that we follow to write proper code. They should be start with letters, underscore(_), or dollar sign(\$). Subsequent characters can be letters, underscore(_), or digits(from $0$ to $9$). Also, there are some &lt;em&gt;keywords&lt;/em&gt; and &lt;em&gt;reserved words&lt;/em&gt;. These are pre-defined names that defined by JavaScript and you cannot use them as a variable.&lt;/p&gt;
+
+&lt;h2 id=&quot;semicolon&quot;&gt;Semicolon&lt;/h2&gt;
+
+&lt;p&gt;Like most of the other programming languages, there is semicolon(;) in JavaScript. At the end of the statement, you put semicolon to identify statement is end. But, you do not need to put semicolon. It is optional as long as the statements are written separate lines.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Both of them are valid&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;data-types&quot;&gt;Data Types&lt;/h2&gt;
+
+&lt;p&gt;Like in other programmin languages, there are some data types which grouped into primitives and objects. All primitives are &lt;strong&gt;immutable&lt;/strong&gt; meaning that they cannot be changed after defined them. These primitive data types are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Number&lt;/li&gt;
+  &lt;li&gt;String&lt;/li&gt;
+  &lt;li&gt;Boolean&lt;/li&gt;
+  &lt;li&gt;Symbol&lt;/li&gt;
+  &lt;li&gt;Null&lt;/li&gt;
+  &lt;li&gt;Undefined&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;number-data-type&quot;&gt;Number Data Type&lt;/h3&gt;
+
+&lt;p&gt;It represents both integer and float numbers.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MAX_VALUE&lt;/code&gt;: The highest number in the JavaScript. Its value is &lt;code class=&quot;highlighter-rouge&quot;&gt;1.7976931348623157e+308&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;Number.MAX_VALUE&lt;/code&gt; gives you this number. &lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;MIN_VALUE&lt;/code&gt;: The smallest number in the JavaScript. Its value is &lt;code class=&quot;highlighter-rouge&quot;&gt;5e-324&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;Number.MIN_VALUE&lt;/code&gt; gives you this number.&lt;/p&gt;
+
+&lt;h4 id=&quot;symbolic-numbers&quot;&gt;Symbolic Numbers&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Infinity&lt;/code&gt;: This is any number divided by 0 or an attempt to multiply &lt;code class=&quot;highlighter-rouge&quot;&gt;MAX_VALUE&lt;/code&gt; by an Integer which is bigger than 1. &lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;-Infinity&lt;/code&gt;: This is any number divided by -0 or an attemp to multiply &lt;code class=&quot;highlighter-rouge&quot;&gt;MAX_VALUE&lt;/code&gt; by an Integer which is smaller than -1. &lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;NaN&lt;/code&gt;: &lt;strong&gt;Not-a-Number&lt;/strong&gt;. It is a number which denotes the unrepresentable number like &lt;em&gt;complex numbers&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;string-data-type&quot;&gt;String Data Type&lt;/h3&gt;
+
+&lt;p&gt;String is similar to other languages. You can use &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;''&lt;/code&gt; for string.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sample String&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Other string&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Both of them are valid&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Also, you can print out the single or double quotations. &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;'&quot;&lt;/code&gt; evaluates &lt;code class=&quot;highlighter-rouge&quot;&gt;'&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;'&quot;'&lt;/code&gt; evaluates &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;Hello&quot; World&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// &quot;Hello&quot; World&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;'Hello' World&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// 'Hello' world&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Moreover, string is immutable in JavaScript. So, you cannot modify the string after declaration. However, you can do some operations over the strings like substring or concatenation.&lt;/p&gt;
+
+&lt;h3 id=&quot;boolean-data-type&quot;&gt;Boolean Data Type&lt;/h3&gt;
+
+&lt;p&gt;Like other programming languages, there are two boolean value, &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;symbol-data-type&quot;&gt;Symbol Data Type&lt;/h3&gt;
+
+&lt;p&gt;It is new to JavaScript. A Symbol is a unique and immutable primitive value.&lt;/p&gt;
+
+&lt;h3 id=&quot;null-data-type&quot;&gt;Null Data Type&lt;/h3&gt;
+
+&lt;p&gt;It is a primitive data type that represents the absence of any object value. If a variable contains no valid number, string, boolean, array, or object, it contains null.&lt;/p&gt;
+
+&lt;h3 id=&quot;undefined-data-type&quot;&gt;Undefined Data Type&lt;/h3&gt;
+
+&lt;p&gt;If a variable does not exists, or has been declared but has never had a value assigned to it, the undefined value is returned.&lt;/p&gt;
+
+&lt;h2 id=&quot;typeof-operator&quot;&gt;&lt;em&gt;typeof&lt;/em&gt; Operator&lt;/h2&gt;
+
+&lt;p&gt;We can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;typeof&lt;/code&gt; operator to learn a variable’s type.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sample string&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// prints out &quot;string&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// prints out &quot;number&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// prints out &quot;boolean&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;dynamic-typing&quot;&gt;Dynamic Typing&lt;/h2&gt;
+
+&lt;p&gt;Sometimes we want to change the variable’s type during the program. We use dynamic typing for this purpose. Once we defined a variable, we can change the value with different type.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a is: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a's type is: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// a is: 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// a's type is: number&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sample string&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a is: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a's type is: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// a is: sample string&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// a's type is: string&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;naming&quot;&gt;Naming&lt;/h2&gt;
+
+&lt;p&gt;JavaScript is a case-sensitive language which means that &lt;code class=&quot;highlighter-rouge&quot;&gt;sampleVariable&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;samplevariable&lt;/code&gt; are not the same variables. Also, you cannot use &lt;strong&gt;reserved word&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;coercion&quot;&gt;Coercion&lt;/h2&gt;
+
+&lt;p&gt;In other languages, there is type casting. But, in JavaScript, there is not such a feature and you need to use &lt;em&gt;coercion&lt;/em&gt;. It means that one of the data type is being converted or coerced and performs the operation. The rules are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Number + String = String&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Booelan + String = String&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Number + Boolean = Number&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;unary-operator&quot;&gt;Unary Operator&lt;/h2&gt;
+
+&lt;p&gt;It is the same as in C-like languages. &lt;code class=&quot;highlighter-rouge&quot;&gt;++a&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;a++&lt;/code&gt; is valid.&lt;/p&gt;
+
+&lt;h2 id=&quot;binary-operator&quot;&gt;Binary Operator&lt;/h2&gt;
+
+&lt;p&gt;There must be two operands and one operator. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;a + b = c&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;ternary-operator&quot;&gt;Ternary Operator&lt;/h2&gt;
+
+&lt;p&gt;It is conditional opeator. &lt;code class=&quot;highlighter-rouge&quot;&gt;a ? b : c&lt;/code&gt; is a basic form. It means that if &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; is true, &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; is returned, if not true, &lt;code class=&quot;highlighter-rouge&quot;&gt;c&lt;/code&gt; is returned.&lt;/p&gt;
+
+&lt;h2 id=&quot;arithmetic-operators&quot;&gt;Arithmetic Operators&lt;/h2&gt;
+
+&lt;p&gt;Addition(+), subtraction(-), multiplication(*), division(/), remainder(%), exponention(**) are the same as in the other languages.&lt;/p&gt;</content><author><name>Gökhan Özeloğlu</name></author><category term="javascript" /><summary type="html">I have started to learn JavaScript from scratch and I decided to write a blog to share what I learned in this process.</summary></entry><entry><title type="html">30 Days of LeetCoding Challenge Journey - April 2020</title><link href="http://localhost:4000/general/30-days-of-leetcoding-challange" rel="alternate" type="text/html" title="30 Days of LeetCoding Challenge Journey - April 2020" /><published>2020-04-02T19:24:43+03:00</published><updated>2020-04-02T19:24:43+03:00</updated><id>http://localhost:4000/general/30-days-of-leetcoding-challenge</id><content type="html" xml:base="http://localhost:4000/general/30-days-of-leetcoding-challange">&lt;p&gt;Hi! I have not been written any post in my blog for a while. So, I decided to publish &lt;a href=&quot;https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/&quot;&gt;30-day LeetCode Challenge&lt;/a&gt; solutions day-by-day. I am going to update this post everyday until end of the challenge. I will give my solution as a Python code and my solution in textual way. Maybe you will find more efficient solution in terms of space and time complexity, you can contact with me. In some question, I can learn better solution after I solved the question. In this case, I can share better solution(s) with my solution.&lt;/p&gt;
 
 &lt;h2 id=&quot;day-1---single-number&quot;&gt;Day 1 - Single Number&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Here is the question link : &lt;a href=&quot;https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/528/week-1/3283/&quot;&gt;Week #1 - Single Number&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -492,7 +650,6 @@
                 &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
                     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
             
-        
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent_stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
         

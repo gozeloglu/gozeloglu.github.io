@@ -542,7 +542,6 @@ class Solution:
                 else:
                     return False
             
-        
         if len(parent_stack) == 0:
             return True
         
