@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Hello World! | Gökhan Özeloğlu</title>
+<title>Hashing | Gökhan Özeloğlu</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Hello World!" />
+<meta property="og:title" content="Hashing" />
 <meta name="author" content="Gökhan Özeloğlu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Introduction Hello everyone!" />
-<meta property="og:description" content="Introduction Hello everyone!" />
-<link rel="canonical" href="http://localhost:4000/general/hello-world" />
-<meta property="og:url" content="http://localhost:4000/general/hello-world" />
+<meta name="description" content="In this article, I am going to try explain hashing concept. I hope it helps you and you can find your answers." />
+<meta property="og:description" content="In this article, I am going to try explain hashing concept. I hope it helps you and you can find your answers." />
+<link rel="canonical" href="http://localhost:4000/general/hashing" />
+<meta property="og:url" content="http://localhost:4000/general/hashing" />
 <meta property="og:site_name" content="Gökhan Özeloğlu" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-12-28T21:14:05+03:00" />
+<meta property="article:published_time" content="2019-12-29T00:00:52+03:00" />
 <script type="application/ld+json">
-{"datePublished":"2019-12-28T21:14:05+03:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/general/hello-world"},"url":"http://localhost:4000/general/hello-world","author":{"@type":"Person","name":"Gökhan Özeloğlu"},"description":"Introduction Hello everyone!","headline":"Hello World!","dateModified":"2019-12-28T21:14:05+03:00","@context":"https://schema.org"}</script>
+{"datePublished":"2019-12-29T00:00:52+03:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/general/hashing"},"url":"http://localhost:4000/general/hashing","author":{"@type":"Person","name":"Gökhan Özeloğlu"},"description":"In this article, I am going to try explain hashing concept. I hope it helps you and you can find your answers.","headline":"Hashing","dateModified":"2019-12-29T00:00:52+03:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="shortcut icon" type="image/jpg" href="/pp.jpg"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Gökhan Özeloğlu" /><script type="text/x-mathjax-config">
@@ -55,33 +55,24 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Hello World!</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Hashing</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2019-12-28T21:14:05+03:00" itemprop="datePublished">Dec 28, 2019
+      <time class="dt-published" datetime="2019-12-29T00:00:52+03:00" itemprop="datePublished">Dec 29, 2019
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Gökhan Özeloğlu</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="introduction">Introduction</h1>
-<p>Hello everyone!</p>
+    <p>In this article, I am going to try explain hashing concept. I hope it helps you and you can find your answers.</p>
 
-<p>I am Gökhan. I am a computer science student at Hacettepe University. I am 3rd grade. I was plannig to open a personal blog, at the end, I opened this blog, finally! I am using <a href="https://jekyllrb.com/">Jekyll</a> on my blog. I am using default theme, which is <code class="highlighter-rouge">minima</code>, for now, but maybe I will change it with a new one in the future.</p>
+<h1 id="what-is-hashing">What is hashing?</h1>
 
-<h3 id="what-will-i-share">What will I share?</h3>
+<p>Hashing is an important data structure that used in computer science. It solves many problems easily. There are some advantages to use it. It basically has a <em>hash function</em> which is used for mapping data. It speeds up the inserting, deleting, or removing data from hash table. The hashing performance depends on hash function. If you use a good hash function, you can decrease the collisions and probe number.</p>
 
-<p>In this blog, there will be different kind of articles about myself and computer science. I am going to try publish information that I have learned, and I am going to use this blog as a diary or tutorial for computer science related things. Maybe this articles will be helped some people who want to learn new things.</p>
+<h1 id="real-world-example">Real World Example</h1>
 
-<h3 id="contact">Contact</h3>
+<p>I want to explain hashing concept by given an example. Let’s say, you have a database which includes information about students, lectures, and teachers. Your goal is holding these all informations as possible as <em>efficiently</em>. What I mean by <em>efficiently</em>? <strong>Efficiency</strong> means that making some operations on data fast and reliable by obstructing any unexpected situations. You should retrieve some special or all data, updating data fastly. The best scenario to reach data is accessing at the first time. We call <strong>O(1)</strong> in terms of algorithmic complexity. It means that we access the target value at the first or a few times. We can ignore 2, 3, or 4 times, if we have a big data.</p>
 
-<p>You can reach me with different ways.</p>
-
-<ul>
-  <li><a href="gozeloglu@gmail.com">Gmail</a></li>
-  <li><a href="https://www.linkedin.com/in/gokhanozeloglu/">LinkedIn</a></li>
-  <li><a href="https://twitter.com/gozeloglu4835">Twitter</a> (Sometimes I suspend my account due to not want to waste of my time, so if you cannot reach me out in Twitter, you can use other ways, Gmail or LinkedIn.)</li>
-</ul>
-
-  </div><a class="u-url" href="/general/hello-world" hidden></a>
+  </div><a class="u-url" href="/general/hashing" hidden></a>
 </article>
 
       </div>
