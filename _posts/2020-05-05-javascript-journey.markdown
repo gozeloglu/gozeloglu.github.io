@@ -176,3 +176,204 @@ It is conditional opeator. `a ? b : c` is a basic form. It means that if `a` is 
 ## Arithmetic Operators
 
 Addition(+), subtraction(-), multiplication(*), division(/), remainder(%), exponention(**) are the same as in the other languages.
+
+## Equality Operator (==)
+
+It compares two operands and return `true` if they are equal. Otherwise, it returns `false`. But, there is a different rule apart from other languages. If you try to compare two operands which has the different types, JavaScript applies the strict comparison. For example,
+
+{% highlight javascript %}
+console.log(1 == 1);                // True
+console.log(1 == "1");              // True
+console.log(1 == '1');              // True
+console.log(1 == true);             // True
+console.log(1 == null);             // False
+console.log(1 == undefined);        // False
+console.log(undefined == null);     // True
+{% endhighlight javascript %}
+
+## Inequality Operator (!=)
+
+It compares two operands and return `true` if they are not equal. Otherwise, it returns `false`. If you try to compare two operands which has the different types, JavaScript applies the strict comparison. It converts the appropriate type. For example,
+
+{% highlight javascript %}
+console.log(1 != 1);                // False
+console.log(1 != "1");              // False
+console.log(1 != '1');              // False
+console.log(1 != true);             // False
+console.log(1 != null);             // True
+console.log(1 != undefined);        // True
+console.log(undefined != null);     // False
+{% endhighlight javascript %}
+
+## Object Comparision
+
+While comparing two objects, JavaScript looks at the memory address of the objects. If the adresses are different, so objects are different. 
+
+{% highlight javascript %}
+class SampleObject {
+
+    constructor(a) {
+        this.a = a;
+    }
+}
+
+// These are different object
+// Their memory addresses are different
+var object1 = new SampleObject(12);
+var object2 = new SampleObject(12);
+
+// object1 reference set to the object2
+object1 = object2;
+{% endhighlight javascript %}
+
+## Strict Equality (===)
+
+If the operands are strictly equal and has the same type, it returns `true`.
+
+{% highlight javascript %}
+console.log(1 === 1);               // True
+console.log(1 === "1");             // False
+console.log('1' === 1);             // False
+console.log(0 === false);           // False
+console.log(0 === null);            // False
+console.log(0 === undefined);       // False
+console.log(null === undefined);    // False
+{% endhighlight javascript %}
+
+## Strict Inequality (!==)
+
+If the operands are strictly not equal and has not the same type, it returns `true`.
+
+{% highlight javascript %}
+console.log(1 !== 1);               // False
+console.log(1 !== "1");             // True
+console.log('1' !== 1);             // True
+console.log(0 !== false);           // True
+console.log(0 !== null);            // True
+console.log(0 !== undefined);       // True
+console.log(null !== undefined);    // True
+{% endhighlight javascript %}
+
+## Functions
+
+Functions are similar to other languages, but there are some differents in some usages. Functions are declared with `function` keyword and it is a `Function` object property. By default, functions return the value `undefined`. If you want to return something different, you need to return any other statement with `return` keyword. A function example,
+
+{% highlight javascript %}
+function multiply(x, y) {
+    return x * y;
+}
+{% endhighlight javascript %}
+
+Also, we can define function expressions like *anonymous function*. Function names are omitted. Here is a example,
+
+{% highlight javascript %}
+function main() {
+
+    var addition = function(x, y) {
+        return x + y;
+    }
+
+    console.log(addition(12));
+}
+{% endhighlight javascript %}
+
+Also, we can define named functions. These can be property of the variable or reference of the variable. Example,
+
+{% highlight javascript %}
+function main() {
+
+    // Named function --> As a property of the math variable
+    var math = {
+        divide:
+            function divide(x, y) {
+                if (y != 0) {
+                    return x / y;
+                } else {
+                    return 0;
+                }
+            }
+    };
+
+    console.log(math.divide(10,5));
+
+    // Named function --> Referenced by the div variable
+    var div = function divide(x, y)  {
+        if (y != 0) {
+            return x / y;
+        } else {
+            return 0;
+        }
+    }
+
+    console.log(div(10, 5));
+}
+{% endhighlight javascript %}
+
+## var, let, and const
+
+There some different ways to define variables in JavaScript and there are some minor differences between them.
+
+#### **var**
+
+We use `var` to define variable. It creates a local variable that is accessible in declared scope. It will 
+not be visible out of the declared scope. Also we can change its value after defined it.
+
+{% highlight javascript %}
+function main(input) {
+
+    var a = input;
+
+    if (a % 2 == 0) {
+        var a = input + 1;
+        console.log(a);     // a = 12
+    }
+
+    console.log(a);         // a = 12
+}
+
+// input = 11
+{% endhighlight javascript %}
+
+In this example, `input` is 11 and we defined `a` in function scope. When if block is executed, we initialized the `a` again and incremented by 1. `a` value is still 12 after if block because if block is in function scope. Function includes if block.
+
+#### **let**
+
+We can also use `let` keyword to define a variable with limited scope. Once we defined the variable, it is only accessable from this scope. When we try to access the variable from out of the scope, we cannot access.
+
+{% highlight javascript %}
+function main(input) {
+
+    let a = input;
+
+    if (a % 2 == 0) {
+        let a = input + 1;
+        console.log(a);     // a = 12
+    }
+
+    console.log(a);         // a = 11
+}
+// input = 11
+{% endhighlight javascript %}
+
+In this example, firstly, we created `a` and assigned to `input`. In if-block, we declared again and assigned `input+1`. So, our output is `12` for the first one. When we go out of the if-block, `a` is still 11 and output will be `11`. That's because our `a` variable which has `12` is defined in if-block and it is valid in if scope. Also, we cannot re-define a variable in the same scope. If we try to define a variable again, it will cause an *Error*. Below example is invalid and error will be occurred.
+
+{% highlight javascript %}
+function main(input) {
+    let a = 12;
+
+    // This line will be caused error
+    let a = 13;
+}
+{% endhighlight javascript %}
+
+#### **const**
+
+We can only define once and cannot be reassigned with another value in `const` variables. Also, `const` variable should always be initialized. Otherwise, error will be occurred.
+
+{% highlight javascript %}
+function main() {
+    const a = 12;
+
+    const b;    // This wrong because it not initialized
+}
+{% endhighlight javascript %}

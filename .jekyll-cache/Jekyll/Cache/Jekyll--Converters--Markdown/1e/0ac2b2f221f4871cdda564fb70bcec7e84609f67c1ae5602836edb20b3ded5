@@ -1,0 +1,332 @@
+I"��<p>I have started to learn JavaScript from scratch and I decided to write a blog to share what I learned in this process.</p>
+
+<h2 id="what-is-javascript">What is JavaScript?</h2>
+
+<p>JavaScript is a programmin language that gives behavior to the programs. We give some functionalities to the web pages or mobile application with JavaScript.</p>
+
+<h2 id="printing-output">Printing output</h2>
+
+<p>We start programming with “Hello World!” message. To print out something on the screen is important to write “Hello World” message. We use <code class="highlighter-rouge">console.log()</code> function to print out some messages on the screen. We can write “Hello World” message like this:</p>
+
+<p><code class="highlighter-rouge">console.log("Hello World");</code></p>
+
+<h2 id="comments">Comments</h2>
+
+<p>JavaScript comments are similar to C-like languages. There are 2 options to write comments in our codes.</p>
+
+<h4 id="inline-comments"><strong>Inline Comments</strong></h4>
+
+<p>Any text between <code class="highlighter-rouge">//</code> is ignored by JavaScript and does not affect the program.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">This message will be visible</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// This line will not be visible</span></code></pre></figure>
+
+<h4 id="block-comments"><strong>Block Comments</strong></h4>
+
+<p>Any text between <code class="highlighter-rouge">/*</code> and <code class="highlighter-rouge">*/</code> is ignored by JavaScript and does not affect the program.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">This message will be visible</span><span class="dl">"</span><span class="p">);</span>
+<span class="cm">/*
+* This block will not be visible
+* console.log("This block will be ignored);
+*/</span></code></pre></figure>
+
+<h2 id="identifiers">Identifiers</h2>
+
+<p>Simply, identifiers are the variable that we defined and is being used in the program. There are some rules that we follow to write proper code. They should be start with letters, underscore(_), or dollar sign(\$). Subsequent characters can be letters, underscore(_), or digits(from $0$ to $9$). Also, there are some <em>keywords</em> and <em>reserved words</em>. These are pre-defined names that defined by JavaScript and you cannot use them as a variable.</p>
+
+<h2 id="semicolon">Semicolon</h2>
+
+<p>Like most of the other programming languages, there is semicolon(;) in JavaScript. At the end of the statement, you put semicolon to identify statement is end. But, you do not need to put semicolon. It is optional as long as the statements are written separate lines.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="c1">// Both of them are valid</span></code></pre></figure>
+
+<h2 id="data-types">Data Types</h2>
+
+<p>Like in other programmin languages, there are some data types which grouped into primitives and objects. All primitives are <strong>immutable</strong> meaning that they cannot be changed after defined them. These primitive data types are:</p>
+<ul>
+  <li>Number</li>
+  <li>String</li>
+  <li>Boolean</li>
+  <li>Symbol</li>
+  <li>Null</li>
+  <li>Undefined</li>
+</ul>
+
+<h3 id="number-data-type">Number Data Type</h3>
+
+<p>It represents both integer and float numbers.</p>
+
+<p><code class="highlighter-rouge">MAX_VALUE</code>: The highest number in the JavaScript. Its value is <code class="highlighter-rouge">1.7976931348623157e+308</code>. <code class="highlighter-rouge">Number.MAX_VALUE</code> gives you this number. <br />
+<code class="highlighter-rouge">MIN_VALUE</code>: The smallest number in the JavaScript. Its value is <code class="highlighter-rouge">5e-324</code>. <code class="highlighter-rouge">Number.MIN_VALUE</code> gives you this number.</p>
+
+<h4 id="symbolic-numbers">Symbolic Numbers</h4>
+
+<p><code class="highlighter-rouge">Infinity</code>: This is any number divided by 0 or an attempt to multiply <code class="highlighter-rouge">MAX_VALUE</code> by an Integer which is bigger than 1. <br />
+<code class="highlighter-rouge">-Infinity</code>: This is any number divided by -0 or an attemp to multiply <code class="highlighter-rouge">MAX_VALUE</code> by an Integer which is smaller than -1. <br />
+<code class="highlighter-rouge">NaN</code>: <strong>Not-a-Number</strong>. It is a number which denotes the unrepresentable number like <em>complex numbers</em>.</p>
+
+<h3 id="string-data-type">String Data Type</h3>
+
+<p>String is similar to other languages. You can use <code class="highlighter-rouge">""</code> or <code class="highlighter-rouge">''</code> for string.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Sample String</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Other string</span><span class="dl">'</span><span class="p">;</span>
+<span class="c1">// Both of them are valid</span></code></pre></figure>
+
+<p>Also, you can print out the single or double quotations. <code class="highlighter-rouge">"'"</code> evaluates <code class="highlighter-rouge">'</code> and <code class="highlighter-rouge">'"'</code> evaluates <code class="highlighter-rouge">"</code>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">"Hello" World</span><span class="dl">'</span><span class="p">);</span>   <span class="c1">// "Hello" World</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">'Hello' World</span><span class="dl">"</span><span class="p">);</span>   <span class="c1">// 'Hello' world</span></code></pre></figure>
+
+<p>Moreover, string is immutable in JavaScript. So, you cannot modify the string after declaration. However, you can do some operations over the strings like substring or concatenation.</p>
+
+<h3 id="boolean-data-type">Boolean Data Type</h3>
+
+<p>Like other programming languages, there are two boolean value, <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code>.</p>
+
+<h3 id="symbol-data-type">Symbol Data Type</h3>
+
+<p>It is new to JavaScript. A Symbol is a unique and immutable primitive value.</p>
+
+<h3 id="null-data-type">Null Data Type</h3>
+
+<p>It is a primitive data type that represents the absence of any object value. If a variable contains no valid number, string, boolean, array, or object, it contains null.</p>
+
+<h3 id="undefined-data-type">Undefined Data Type</h3>
+
+<p>If a variable does not exists, or has been declared but has never had a value assigned to it, the undefined value is returned.</p>
+
+<h2 id="typeof-operator"><em>typeof</em> Operator</h2>
+
+<p>We can use the <code class="highlighter-rouge">typeof</code> operator to learn a variable’s type.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sample string</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">a</span><span class="p">));</span>     <span class="c1">// prints out "string"</span>
+
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">b</span><span class="p">));</span>     <span class="c1">// prints out "number"</span>
+
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">c</span><span class="p">));</span>     <span class="c1">// prints out "boolean"</span></code></pre></figure>
+
+<h2 id="dynamic-typing">Dynamic Typing</h2>
+
+<p>Sometimes we want to change the variable’s type during the program. We use dynamic typing for this purpose. Once we defined a variable, we can change the value with different type.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">a is: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">a</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">a's type is: </span><span class="dl">"</span> <span class="o">+</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">a</span><span class="p">));</span>
+<span class="c1">// a is: 1</span>
+<span class="c1">// a's type is: number</span>
+
+<span class="nx">a</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sample string</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">a is: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">a</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">a's type is: </span><span class="dl">"</span> <span class="o">+</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">a</span><span class="p">));</span>
+<span class="c1">// a is: sample string</span>
+<span class="c1">// a's type is: string</span></code></pre></figure>
+
+<h2 id="naming">Naming</h2>
+
+<p>JavaScript is a case-sensitive language which means that <code class="highlighter-rouge">sampleVariable</code> and <code class="highlighter-rouge">samplevariable</code> are not the same variables. Also, you cannot use <strong>reserved word</strong>.</p>
+
+<h2 id="coercion">Coercion</h2>
+
+<p>In other languages, there is type casting. But, in JavaScript, there is not such a feature and you need to use <em>coercion</em>. It means that one of the data type is being converted or coerced and performs the operation. The rules are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Number + String = String</code></li>
+  <li><code class="highlighter-rouge">Booelan + String = String</code></li>
+  <li><code class="highlighter-rouge">Number + Boolean = Number</code></li>
+</ul>
+
+<h2 id="unary-operator">Unary Operator</h2>
+
+<p>It is the same as in C-like languages. <code class="highlighter-rouge">++a</code> or <code class="highlighter-rouge">a++</code> is valid.</p>
+
+<h2 id="binary-operator">Binary Operator</h2>
+
+<p>There must be two operands and one operator. For example, <code class="highlighter-rouge">a + b = c</code>.</p>
+
+<h2 id="ternary-operator">Ternary Operator</h2>
+
+<p>It is conditional opeator. <code class="highlighter-rouge">a ? b : c</code> is a basic form. It means that if <code class="highlighter-rouge">a</code> is true, <code class="highlighter-rouge">b</code> is returned, if not true, <code class="highlighter-rouge">c</code> is returned.</p>
+
+<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+
+<p>Addition(+), subtraction(-), multiplication(*), division(/), remainder(%), exponention(**) are the same as in the other languages.</p>
+
+<h2 id="equality-operator-">Equality Operator (==)</h2>
+
+<p>It compares two operands and return <code class="highlighter-rouge">true</code> if they are equal. Otherwise, it returns <code class="highlighter-rouge">false</code>. But, there is a different rule apart from other languages. If you try to compare two operands which has the different types, JavaScript applies the strict comparison. For example,</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>                <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span>              <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>              <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="kc">true</span><span class="p">);</span>             <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="kc">null</span><span class="p">);</span>             <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span>        <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span> <span class="o">==</span> <span class="kc">null</span><span class="p">);</span>     <span class="c1">// True</span></code></pre></figure>
+
+<h2 id="inequality-operator-">Inequality Operator (!=)</h2>
+
+<p>It compares two operands and return <code class="highlighter-rouge">true</code> if they are not equal. Otherwise, it returns <code class="highlighter-rouge">false</code>. If you try to compare two operands which has the different types, JavaScript applies the strict comparison. It converts the appropriate type. For example,</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">);</span>                <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span>              <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>              <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="kc">true</span><span class="p">);</span>             <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">);</span>             <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">);</span>        <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">);</span>     <span class="c1">// False</span></code></pre></figure>
+
+<h2 id="object-comparision">Object Comparision</h2>
+
+<p>While comparing two objects, JavaScript looks at the memory address of the objects. If the adresses are different, so objects are different.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">class</span> <span class="nx">SampleObject</span> <span class="p">{</span>
+
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// These are different object</span>
+<span class="c1">// Their memory addresses are different</span>
+<span class="kd">var</span> <span class="nx">object1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SampleObject</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">object2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SampleObject</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+
+<span class="c1">// object1 reference set to the object2</span>
+<span class="nx">object1</span> <span class="o">=</span> <span class="nx">object2</span><span class="p">;</span></code></pre></figure>
+
+<h2 id="strict-equality-">Strict Equality (===)</h2>
+
+<p>If the operands are strictly equal and has the same type, it returns <code class="highlighter-rouge">true</code>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span>               <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span>             <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span>             <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="kc">false</span><span class="p">);</span>           <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="kc">null</span><span class="p">);</span>            <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">);</span>       <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">);</span>    <span class="c1">// False</span></code></pre></figure>
+
+<h2 id="strict-inequality-">Strict Inequality (!==)</h2>
+
+<p>If the operands are strictly not equal and has not the same type, it returns <code class="highlighter-rouge">true</code>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">);</span>               <span class="c1">// False</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span>             <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">);</span>             <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">!==</span> <span class="kc">false</span><span class="p">);</span>           <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">);</span>            <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">);</span>       <span class="c1">// True</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">);</span>    <span class="c1">// True</span></code></pre></figure>
+
+<h2 id="functions">Functions</h2>
+
+<p>Functions are similar to other languages, but there are some differents in some usages. Functions are declared with <code class="highlighter-rouge">function</code> keyword and it is a <code class="highlighter-rouge">Function</code> object property. By default, functions return the value <code class="highlighter-rouge">undefined</code>. If you want to return something different, you need to return any other statement with <code class="highlighter-rouge">return</code> keyword. A function example,</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Also, we can define function expressions like <em>anonymous function</em>. Function names are omitted. Here is a example,</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">addition</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addition</span><span class="p">(</span><span class="mi">12</span><span class="p">));</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Also, we can define named functions. These can be property of the variable or reference of the variable. Example,</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Named function --&gt; As a property of the math variable</span>
+    <span class="kd">var</span> <span class="nx">math</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">divide</span><span class="p">:</span>
+            <span class="kd">function</span> <span class="nx">divide</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="nx">x</span> <span class="o">/</span> <span class="nx">y</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+
+    <span class="c1">// Named function --&gt; Referenced by the div variable</span>
+    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">divide</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">x</span> <span class="o">/</span> <span class="nx">y</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">div</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="var-let-and-const">var, let, and const</h2>
+
+<p>There some different ways to define variables in JavaScript and there are some minor differences between them.</p>
+
+<h4 id="var"><strong>var</strong></h4>
+
+<p>We use <code class="highlighter-rouge">var</code> to define variable. It creates a local variable that is accessible in declared scope. It will 
+not be visible out of the declared scope. Also we can change its value after defined it.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">input</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>     <span class="c1">// a = 12</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>         <span class="c1">// a = 12</span>
+<span class="p">}</span>
+
+<span class="c1">// input = 11</span></code></pre></figure>
+
+<p>In this example, <code class="highlighter-rouge">input</code> is 11 and we defined <code class="highlighter-rouge">a</code> in function scope. When if block is executed, we initialized the <code class="highlighter-rouge">a</code> again and incremented by 1. <code class="highlighter-rouge">a</code> value is still 12 after if block because if block is in function scope. Function includes if block.</p>
+
+<h4 id="let"><strong>let</strong></h4>
+
+<p>We can also use <code class="highlighter-rouge">let</code> keyword to define a variable with limited scope. Once we defined the variable, it is only accessable from this scope. When we try to access the variable from out of the scope, we cannot access.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">input</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>     <span class="c1">// a = 12</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>         <span class="c1">// a = 11</span>
+<span class="p">}</span>
+<span class="c1">// input = 11</span></code></pre></figure>
+
+<p>In this example, firstly, we created <code class="highlighter-rouge">a</code> and assigned to <code class="highlighter-rouge">input</code>. In if-block, we declared again and assigned <code class="highlighter-rouge">input+1</code>. So, our output is <code class="highlighter-rouge">12</code> for the first one. When we go out of the if-block, <code class="highlighter-rouge">a</code> is still 11 and output will be <code class="highlighter-rouge">11</code>. That’s because our <code class="highlighter-rouge">a</code> variable which has <code class="highlighter-rouge">12</code> is defined in if-block and it is valid in if scope. Also, we cannot re-define a variable in the same scope. If we try to define a variable again, it will cause an <em>Error</em>. Below example is invalid and error will be occurred.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+
+    <span class="c1">// This line will be caused error</span>
+    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="const"><strong>const</strong></h4>
+
+<p>We can only define once and cannot be reassigned with another value in <code class="highlighter-rouge">const</code> variables. Also, <code class="highlighter-rouge">const</code> variable should always be initialized. Otherwise, error will be occurred.</p>
+
+:ET
