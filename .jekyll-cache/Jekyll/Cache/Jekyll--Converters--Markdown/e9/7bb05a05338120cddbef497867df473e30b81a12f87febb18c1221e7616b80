@@ -1,0 +1,59 @@
+I"�"<p>I’ve been writing Go for 2,5 months. I started to write Go with my new job. After leaving my part-time job, I’ve started to work in a company, SabancıDx, as a software engineer. In this company, I have been involved a newly started project which is being written in Go.</p>
+
+<h3 id="how-i-learned">How I learned?</h3>
+
+<p>I firstly completed <a href="https://tour.golang.org/welcome/1">Go Tour</a>. In my opinion, Go Tour is the best starting point for learning Go. It starts with basics like initializing variables, loops, conditions, functions and goes until concurrency. I did not complete the concurrency part because the concurrency part wasn’t necessary to start writing Go code. Then, I have started to write some code for the project. Firstly, I tried to write a TCP-server by using the <a href="https://pkg.go.dev/net"><code class="highlighter-rouge">net</code></a> package. After that, I started to take tasks and complete them. While writing code and trying to do something that I learned, I kept reading blog posts, documentation, code, Go packages, and source code. I tried to understand what are the best practices, what other developers do, how they define variables, functions, and lots of other things related to Go.</p>
+
+<p>I firstly completed <a href="https://tour.golang.org/welcome/1">Go Tour</a>. In my opinion, Go Tour is the best starting point of learning Go. It starts with basics like initializing variables, loops, conditions, functions, and goes until concurrency. Actually, I did not complete the concurrency part because it was not so much necessary for me to start to the Go. Then, I started to write some code for the project. Firstly, I tried to write a TCP-server by using <a href="https://pkg.go.dev/net"><code class="highlighter-rouge">net</code></a> package. After that I started to take tasks and complete them. While writing code and trying something that I learned, I kept reading blog posts, documentations, reading code, reading Go packages, and source code. I tried to understand what are the best practices, what other developers do, how them define variables, functions and lots of other things related to Go.</p>
+
+<h4 id="writing-package">Writing package</h4>
+
+<p>Always I have a plan to write a client package to support open source and improve my coding skills. I started to write <a href="https://github.com/gozeloglu/gop-3">GOP3</a> package towards the end of August. It is POP3 client package for Go. It stands for Go + POP3. I used <a href="https://www.ietf.org/rfc/rfc1939.txt">RFC-1939</a> document as a reference while developing client package. RFC-1939 specificies the network protocol of the POP3. Writing a package like this helped me to understand basic concepts of Go like <code class="highlighter-rouge">struct type</code>, <code class="highlighter-rouge">receivers</code>, <code class="highlighter-rouge">pointers</code>. I advice to everyone to write a package to learn Go and apply knowledge that learned. You will make mistakes and see your weaknesses about the Go, then, you will fix them.</p>
+
+<h3 id="pros-and-cons">Pros and Cons</h3>
+
+<p>Main topic of this article is my thoughts about the Go. Before listing them, in general, I definitely loved Go. Here’s the pros:</p>
+
+<h4 id="pros">Pros</h4>
+
+<ul>
+  <li>
+    <p>Installing Go in your local machine is easy and fast. You download and install binaries and makes it ready for you.</p>
+  </li>
+  <li>
+    <p>Creating a project and starting to write some code is so easy. All you need to do is writing <code class="highlighter-rouge">go mod init &lt;package-name&gt;</code> and creating a <code class="highlighter-rouge">main.go</code> file. Then, you can start writing code.</p>
+  </li>
+  <li>
+    <p><strong>Writing simple code.</strong> Writing code and creating something are so fast. For instance, let’s say, you want to create a TCP server, you can create it with ~20 lines. Also, there is no long lines. I jumped to Go from Java and I wrote Java/Spring ~10 months. Creating something was taking more time and I had to write more and long lines. I love simplicity as like in Python and Go. That’s why this one is my one of the favorite feature of Go.</p>
+  </li>
+  <li>
+    <p><strong>Code readability.</strong> Some people can think that understanding Go code is hard because of the Go convention, but I am not agree with that. In general, Go variables, receivers, function parameter names are defined with short names. Of course, you can define with long names but generally Go developers prefer to write short ones. It is not a big problem in my experience so far. Go developers choose meaningful names like <code class="highlighter-rouge">ctx</code> for <code class="highlighter-rouge">context</code>, <code class="highlighter-rouge">mu</code> for <code class="highlighter-rouge">mutex</code>, <code class="highlighter-rouge">c</code> for <code class="highlighter-rouge">Client</code>. In contrast, long names are preferred in Java language and it makes verbose language. I don’t like verbose languages. I get lost while reading code and struggle to understand code. We are not reading novel, we are reading code :)</p>
+  </li>
+  <li>
+    <p><strong>Non-verbose language.</strong> Go definitely is not a verbose language. In contrast, Java is a verbose language, and it makes me tired of reading code. I was getting lost while reading code or try to find something in codebase. In Go, variable names are really short. Generally, variable names are consisting of 1, 2 or 3 characters. Naming variables with short names is common and it increases readability of the code, I guess. Also, function, struct, receiver names are not long, again, I am not getting lost while reading code or searching something in codebase or packages.</p>
+  </li>
+  <li>
+    <p><strong>Documentation:</strong> Go package’s documentations are really cool. Package documentations can be found in <a href="https://pkg.go.dev/">pkg.go.dev</a>. Navigating between functions and titles are really fast. Also, and the most important thing is that you are not drowning in documentations. You are not going into documentation hell.</p>
+  </li>
+  <li>
+    <p><strong>Installing Go packages:</strong> Go provides command for installing packages. You can install any package with <code class="highlighter-rouge">go install &lt;pkg-name&gt;</code>. This command adds to <code class="highlighter-rouge">go.mod</code> file and prepares the environment for you. I haven’t faced any problem yet while installing packages.</p>
+  </li>
+  <li>
+    <p><strong>Releasing package:</strong> I loved Go and Go ecosystem, again, when I pıblished my first package, <a href="https://github.com/gozeloglu/gop-3">GOP-3</a>. I don’t have any package/library realising experience for other languages, so that I am not able to making comparison with other languages. But, I was suprised when I saw my package was put on the <a href="https://pkg.go.dev/">pkg.go.dev</a> automatically. I just made my repository public and the package was in the website. Go handles package releasing automatically. I do not know secret behind of the process, but it is one of the my favorite feature of the Go. Also, when I commit to repository or releasing a new version of the project, the package documentation is updated automatically. I just commit and Go handles updating and releasing the project in documentation page! Super cool!</p>
+  </li>
+  <li>
+    <p><strong>Go community:</strong> Go’s open source community is not as large as other languages, but it’s constantly growing and makes great job. I use GitHub repositories and open source projects while coding. I can find nicely written projects and source codes. Also, contributing to open source projects are very easy. As a Go developer, I just say “I’d like to take that issue”, and I made my contribution. In 2,5 month, I tried to contribute open source projects and create open source project. I am very satisfied Go community and ecosystem.</p>
+  </li>
+  <li>
+    <p><strong>IDE:</strong> I use <a href="https://www.jetbrains.com/go/">GoLand</a> for IDE. Some people prefer to use VSCode, but it is not a IDE and it does not have all features as in GoLand. Generally, I love JetBrains IDE’s and I used many of them, PyCharm, CLion, Intellij IDEA, WebStorm, etc., before. I am definetely suggest to you use GoLand.</p>
+  </li>
+</ul>
+
+<h4 id="cons">Cons</h4>
+
+<ul>
+  <li><strong>Package download statistics:</strong> When I published my first package, <a href="https://github.com/gozeloglu/gop-3">GOP-3</a>, I wanted to see download statistics, but there is not a tool or website to see this. Only I tracked to repository clone statistics in <strong>Insights –&gt; Traffic</strong> section. But, I am not sure that this graph shows us to package download statistics. Here is the example:</li>
+</ul>
+
+<p><img src="/graph.png" alt="Graph" /></p>
+:ET

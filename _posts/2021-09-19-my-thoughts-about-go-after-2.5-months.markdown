@@ -8,38 +8,48 @@ tags: [go]
 permalink: /:categories/go
 ---
 
-I've been writing Go for 2,5 months. I started to write Go with my new job. After leaving my part-time job, I've started to a new company, SabancıDx, as a software engineer. In this company, I involved a newly started project which is being written in Go. 
+I’ve been writing Go for 2,5 months. I started to write Go with my new job. After leaving my part-time job, I’ve started to work in a company, SabancıDx, as a software engineer. In this company, I have been involved a newly started project which is being written in Go.
 
 ### How I learned?
 
-I firstly completed [Go Tour](https://tour.golang.org/welcome/1). In my opinion, Go Tour is the best starting point of learning Go. It starts with basics like initializing variables, loops, conditions, functions, and goes until concurrency. Actually, I did not complete the concurrency part because it was not so much necessary for me to start to the Go. Then, I started to write some code for the project. Firstly, I tried to write a TCP-server by using [`net`](https://pkg.go.dev/net) package. After that I started to take tasks and complete them. While writing code and trying something that I learned, I kept reading blog posts, documentations, reading code, reading Go packages, and source code. I tried to understand what are the best practices, what other developers do, how them define variables, functions and lots of other things related to Go. 
+I firstly completed [Go Tour](https://tour.golang.org/welcome/1). In my opinion, Go Tour is the best starting point for learning Go. It starts with basics like initializing variables, loops, conditions, functions and goes until concurrency. I did not complete the concurrency part because the concurrency part wasn't necessary to start writing Go code. Then, I have started to write some code for the project. Firstly, I tried to write a TCP-server by using the [`net`](https://pkg.go.dev/net) package. After that, I started to take tasks and complete them. While writing code and trying to do something that I learned, I kept reading blog posts, documentation, code, Go packages, and source code. I tried to understand what are the best practices, what other developers do, how they define variables, functions, and lots of other things related to Go.
 
 #### Writing package 
 
-Always I have a plan to write a client package to support open source and improve my coding skills. I started to write [GOP3](https://github.com/gozeloglu/gop-3) package towards the end of August. It is POP3 client package for Go. It stands for Go + POP3. I used [RFC-1939](https://www.ietf.org/rfc/rfc1939.txt) document as a reference while developing client package. RFC-1939 specificies the network protocol of the POP3. Writing a package like this helped me to understand basic concepts of Go like `struct type`, `receivers`, `pointers`. I advice to everyone to write a package to learn Go and apply knowledge that learned. You will make mistakes and see your weaknesses about the Go, then, you will fix them. 
+I always had a plan to write a client package to support open source and improve my coding skills. I started to write the [GOP3](https://github.com/gozeloglu/gop-3) package towards the end of August. It is a POP3 client package for Go. It stands for Go + POP3. I used the [RFC-1939](https://www.ietf.org/rfc/rfc1939.txt) document as a reference while developing the client package. RFC-1939 specifies the network protocol of the POP3. Writing a package helped me to understand basic concepts of Go like `struct type`, `receivers`, `pointers`. I advise everyone to write a package to learn Go and apply the knowledge that I learned. You will make mistakes and see your weaknesses about the Go, then you will fix them.
 
 ### Pros and Cons
 
-Main topic of this article is my thoughts about the Go. Before listing them, in general, I definitely loved Go. Here's the pros:
+The main topic of this article is my thoughts about the Go. Before listing them, in general, I can say that **I really loved to Go**. Here are the pros and cons:
 
 #### Pros
 
-* Installing Go in your local machine is easy and fast. You download and install binaries and makes it ready for you. 
+* Installing Go in your local machine is easy and fast. You download and install binaries and, the Go installer makes Go ready for you.
 
 * Creating a project and starting to write some code is so easy. All you need to do is writing `go mod init <package-name>` and creating a `main.go` file. Then, you can start writing code. 
 
-* **Writing simple code.** Writing code and creating something are so fast. For instance, let's say, you want to create a TCP server, you can create it with ~20 lines. Also, there is no long lines. I jumped to Go from Java and I wrote Java/Spring ~10 months. Creating something was taking more time and I had to write more and long lines. I love simplicity as like in Python and Go. That's why this one is my one of the favorite feature of Go. 
+* **Writing simple code:** Writing code and creating something is so fast. For instance, let’s say, you want to create a TCP server, you can create it with ~20 lines. Also, there are no long lines. I jumped to Go from Java, and I wrote Java/Spring ~10 months. Creating something was taking more time, and I had to write more and long lines. I love simplicity as like in Python and Go. That’s why this one is my one of the favorite feature of Go.
 
-* **Code readability.** Some people can think that understanding Go code is hard because of the Go convention, but I am not agree with that. In general, Go variables, receivers, function parameter names are defined with short names. Of course, you can define with long names but generally Go developers prefer to write short ones. It is not a big problem in my experience so far. Go developers choose meaningful names like `ctx` for `context`, `mu` for `mutex`, `c` for `Client`. In contrast, long names are preferred in Java language and it makes verbose language. I don't like verbose languages. I get lost while reading code and struggle to understand code. We are not reading novel, we are reading code :) 
+* **Code readability:** Some people can think that understanding Go code is hard because of the Go convention, but I do not agree with that. In general, Go variables, receivers, function parameter names are defined with short names. Of course, you can define with long names but generally Go developers prefer to write short ones. It is not a big problem in my experience so far. Go developers choose meaningful names like `ctx` for `context`, `mu` for `mutex`, `c` for `Client`. In contrast, long names are preferred in the Java language and it makes the verbose language. I don’t like verbose languages. I get lost while reading code and struggle to understand code. We are not reading a novel, we are reading code :)
 
-* Non-verbose language
+* **Non-verbose language:** Go is not a verbose language. In contrast, Java is a verbose language, and it makes me tired of reading code. I was getting lost while reading code or try to find something in the codebase. In Go, variable names are really short. Generally, variable names are consisting of 1, 2, or 3 characters. Naming variables with short names are common and it increases the readability of the code, I think. Also, function, struct, receiver names are not long, again, I am not getting lost while reading code or searching something in codebase or packages.
 
-* Close to network 
+* **Documentation:** Go packages' documentation is cool. Package documentation can found in [pkg.go.dev](https://pkg.go.dev/). Navigating between functions and titles is fast. Also, and the most important thing is that you are not drowning in documentations. You do not go into documentation hell.
 
-* Installing Go packages
+* **Installing Go packages:** Go provides a command for installing packages. You can install any package with `go install <pkg-name>`. This command adds to `go.mod` file and prepares the environment for you. I haven’t faced any problem yet while installing packages.
 
-* Releasing package
+* **Releasing package:** I loved the Go and Go ecosystem, again, when I published my first package, [GOP-3](https://github.com/gozeloglu/gop-3). I don’t have any package/library releasing experience for other languages so that I am not able to make comparisons with other languages. But, I was surprised when I saw my package was put on the [pkg.go.dev](https://pkg.go.dev/) automatically. I just made my repository public and the package was on the website. Go handles package releasing automatically. I do not know the secret behind the process, but it is one of my favorite features of the Go. Also, when I commit to the repository or releasing a new version of the project, the package documentation is updated automatically. I just commit and Go handles updating and releasing the project on the documentation page! Super cool!
 
-* Go community
+* **Go community:** Go’s open source community is not as large as other languages, but it’s constantly growing and makes a great job. I use GitHub repositories and open source projects while coding. I can find nicely written projects and source codes. Also, contributing to open-source projects is very easy. As a Go developer, I just say “I’d like to take that issue”, and I make my contribution. In 2,5 months, I tried to contribute to open-source projects and create open-source projects. I am satisfied Go community and ecosystem.
 
-* IDE
+* **IDE:** I use [GoLand](https://www.jetbrains.com/go/) for IDE. Some people prefer to use VSCode, but it is not an IDE, and it does not have all features as in GoLand. Generally, I love JetBrains IDE’s, and I used many of them, PyCharm, CLion, Intellij IDEA, WebStorm, etc., before. I suggest you use GoLand. GoLand makes writing Go code fun. 
+
+#### Cons
+
+* **Package download statistics:** When I published my first package, [GOP-3](https://github.com/gozeloglu/gop-3), I wanted to see download statistics, but there is no tool or website to see this. Only I tracked to repository clone statistics in **Insights --> Traffic** section. But, I am not sure that this graph shows us to package download statistics. Here is the example:
+
+![Graph](/graph.png)
+
+## Conclusion
+
+Everything has been gone great with Go until now. If you are bored with other languages and you are looking for other technologies, I advise you to Go. Go increased my productivity and happiness while writing code. I think Go usage by companies will increase, and it will exist in the industry as one of the mainstream languages for the following years. I hope I will share more experience and good open-source projects with you in the future. If you have any questions, feedback, or project ideas, you can share them with me via mail <gozeloglu@gmail.com> or Twitter [twitter.com/gokhan_ozeloglu](https://twitter.com/gokhan_ozeloglu).
