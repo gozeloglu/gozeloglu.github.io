@@ -22,4 +22,4 @@ You can reach me with different ways.
 
 - [Gmail](gozeloglu@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/gokhanozeloglu/)
-- [Twitter](https://twitter.com/gozeloglu4835) (Sometimes I suspend my account due to not want to waste of my time, so if you cannot reach me out in Twitter, you can use other ways, Gmail or LinkedIn.)
+- [Twitter](https://twitter.com/gokhan_ozeloglu) (Sometimes I suspend my account due to not want to waste of my time, so if you cannot reach me out in Twitter, you can use other ways, Gmail or LinkedIn.)

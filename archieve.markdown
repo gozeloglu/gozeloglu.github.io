@@ -4,6 +4,9 @@ title: Archieve
 permalink: archieve
 ---
 
+### September 2021
+- [My Thought About Go After 2,5 Months](https://gozeloglu.github.io/general/my-thoughts-about-go) - Sep 19, 2021
+
 ### May 2020
 - [JavaScript - Intro](https://gozeloglu.github.io/general/javascript-intro) - May 05, 2020
 
