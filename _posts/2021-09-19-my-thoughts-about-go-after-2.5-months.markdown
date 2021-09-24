@@ -5,7 +5,7 @@ author: Gökhan Özeloğlu
 date: 2021-09-19 22:08:09 +0300
 categories: general
 tags: [go]
-permalink: /:categories/go
+permalink: /:categories/my-thoughts-about-go
 ---
 
 I’ve been writing Go for 2,5 months. I started to write Go with my new job. After leaving my part-time job, I’ve started to work in a company, SabancıDx, as a software engineer. In this company, I have been involved a newly started project which is being written in Go.
