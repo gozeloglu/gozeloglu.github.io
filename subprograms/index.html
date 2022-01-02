@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Subprograms &middot; Gökhan&#39;s Blog</title>
+
+		
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/fonts.css">
+		
+		<link rel="icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Gökhan&#39;s Blog" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					
+						<h2 class="nav-title">Gökhan&#39;s Blog</h2>
+					
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/about/">
+                
+                <span>About</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        Gökhan Özeloğlu
+        <br>
+        <span>on&nbsp;</span><time datetime="2019-12-31 18:00:35 &#43;0300 &#43;03">December 31, 2019</time>
+</div>
+
+		<h1 class="post-title">Subprograms</h1>
+<div class="post-line"></div>
+
+		
+
+		<h1 id="introduction">Introduction</h1>
+<p>In this article, I am going to explain <em>subprograms</em> in programming languages. Subprogram provides some abstraction while building a program. When we write a program, we want to reuse statements in different places and different times. In modern programming language, we collect all statements in a subprogram. It will give us some conveniences like memory space, coding time, and  reusable codes. We call the subprogram from several places in our code blocks and details are hidden by calling only subprogram. Also, this can ensure writing more readable codes.</p>
+<h1 id="fundamentals-of-subprograms">Fundamentals of Subprograms</h1>
+<ul>
+<li>Each subprogram has a single entry point.</li>
+<li>The calling program unit is suspended during the execution of the called subprogram, which impiles that there is only one subprogram in execution at any given time.</li>
+<li>Control always returns to the caller when the subprogram execution terminates.</li>
+</ul>
+<h1 id="definitions">Definitions</h1>
+<p><strong>Subprogram definiton:</strong> Describes the interface to and the actions of the subprogram abstraction. There is a difference in Python subprogram definitions. In Python, function definitions can be executable and when you call the function, it will be executed. Let&rsquo;s look an example.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#666">=</span> <span style="color:#444">1</span>
+
+<span style="color:#2838b0">if</span> a <span style="color:#666">&gt;</span> <span style="color:#444">1</span><span style="color:#888">:</span>
+    <span style="color:#2838b0">def</span> <span style="color:#785840">func</span><span style="color:#888">():</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;a is bigger than 1&#34;</span><span style="color:#888">)</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;If block is executing&#34;</span><span style="color:#888">)</span>
+
+<span style="color:#2838b0">else</span><span style="color:#888">:</span>
+    <span style="color:#2838b0">def</span> <span style="color:#785840">func</span><span style="color:#888">():</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;a is not bigger than 1&#34;</span><span style="color:#888">)</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;Else block is executing&#34;</span><span style="color:#888">)</span>
+
+func<span style="color:#888">()</span> 
+<span style="color:#888;font-style:italic"># Else block will be executed</span>
+<span style="color:#888;font-style:italic"># a is not bigger than 1</span>
+<span style="color:#888;font-style:italic"># Else block is executing</span></code></pre></div>
+<p>In this example, a is declared as an integer variable and its value is 1. After the if-else blocks, we call <code>func()</code> and program executes <strong>else</strong> block, because <em>&ldquo;a is not bigger than 1&rdquo;</em>. So, in this case, function declarations was executed and produced output. If we were declared a with bigger than 1, i.e. 9, the program would be executed <strong>if</strong> block and prints out the <code>a is bigger than 1</code> <code>If block is executing</code> messages.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#666">=</span> <span style="color:#444">1</span>
+
+<span style="color:#2838b0">if</span> a <span style="color:#666">&gt;</span> <span style="color:#444">1</span><span style="color:#888">:</span>
+    <span style="color:#2838b0">def</span> <span style="color:#785840">func</span><span style="color:#888">():</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;a is bigger than 1&#34;</span><span style="color:#888">)</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;If block is executing&#34;</span><span style="color:#888">)</span>
+
+<span style="color:#2838b0">else</span><span style="color:#888">:</span>
+    <span style="color:#2838b0">def</span> <span style="color:#785840">func</span><span style="color:#888">():</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;a is not bigger than 1&#34;</span><span style="color:#888">)</span>
+        <span style="color:#388038">print</span><span style="color:#888">(</span><span style="color:#b83838">&#34;Else block is executing&#34;</span><span style="color:#888">)</span>
+
+func<span style="color:#888">()</span> 
+a <span style="color:#666">=</span> <span style="color:#444">9</span>
+func<span style="color:#888">()</span>
+<span style="color:#888;font-style:italic"># Else block will be executed in both function calls</span></code></pre></div>
+<p>What would happen if we changed the <code>a</code> value. Nothing! Changing the value after the <strong>if-else</strong> blocks, does not affect the execution of <strong>if-else</strong> statements. <code>a</code> remains <strong>1</strong>, in this example. So, output of this function is the same for both <code>func()</code> calls.</p>
+<p><strong>Subprogram call:</strong> A request to execute specific subprogram.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#2838b0">def</span> <span style="color:#785840">fun</span><span style="color:#888">(</span>a<span style="color:#888">,</span> b<span style="color:#888">):</span>
+    <span style="color:#2838b0">return</span> a <span style="color:#666">+</span> b
+
+<span style="color:#666">...</span>
+
+x <span style="color:#666">=</span> fun<span style="color:#888">(</span><span style="color:#444">12</span><span style="color:#888">,</span> <span style="color:#444">2</span><span style="color:#888">)</span>  <span style="color:#888;font-style:italic"># Subprogram call</span></code></pre></div>
+<ul>
+<li>A subprogram is <strong>active</strong> if a subprogram is called, started to execution, but have not terminated yet.</li>
+</ul>
+<p><strong>Subprogram header:</strong> The first part of the definition. It includes name of the function and the formal parameters.</p>
+<p><code>def func(params):</code> ==&gt; Python header</p>
+<p><code>int func(params)</code> ==&gt; C header</p>
+<p>In some languages, like Python, JavaScript, Ruby, and so on, the subprogram definitions are indicated with a <em>special</em> words, which are <strong>reserved word</strong>. You should start with these kind of <em>reserved words</em> when you declare a subprogram. In Python and Ruby, <code>def</code> indicates that it is a subprogram, wheares <code>function</code> in JavaScript.</p>
+<p>The <em>body of the subprograms</em> defines the actions. There are several ways of showing body in different languages. In C-based languages, you delimited by using <em>curly brackets</em>. In Ruby, <code>end</code> statement terminates the body of the subprogram. In Python, indentations play important role.</p>
+<p><strong>Parameter profile:</strong> It contains the number, order, and types of <em>formal parameters</em>.</p>
+<p><strong>Protocol:</strong> Subprogram&rsquo;s parameter profile and if it is a function, its return type.</p>
+<p><code>fun(int a, char c, float f)</code> ==&gt; Parameter profile</p>
+<p><code>int fun(int a, char c, float f)</code> ==&gt; Protocol</p>
+<p>Function declarations in <strong>C</strong> and <strong>C++</strong> are called as <em>protocol</em> and they often place in <em>header files</em>. Also, subprogram declaration provides the protocol, not the body of the subprogram.</p>
+<h1 id="parameters">Parameters</h1>
+<p>Basically, there are two different ways to access data in subprograms. The first one is accessing nonlocal variables which are defined elsewhere and visibile in subprograms. The second one is passing parameters to subprograms. Accessing nonlocal variables is not a good choose, it leads to some problems. It may reduce the reliability, and it is not a good that we want. We should avoid to access and use nonlocal variables. In the second way, passing parameters, it is more convenient and reliable. When we pass a parameter to subprogram, we actually creates the local variables that are defined in subprograms.</p>
+<h4 id="formal-parameters-vs-actual-parameters">Formal Parameters vs. Actual Parameters</h4>
+<p>Parameter in <strong>header</strong> is <em>formal parameter</em> and, generally, called as <em>dummy variable</em>. They are just show that parameter places and, when the subprogram calls they bind to other variables. For instance, if we have a subprogram in Python and declared as <code>def fun(a, b, c):</code>, in this case, <code>a, b, c</code> are <em>formal parameters</em>. <em>Actual parameter</em> uses in subprogram call statements, and represents value or address. For example, when we call <code>fun()</code> function in elsewhere, <code>fun(1, 2, 3)</code>, in this case, <code>1, 2, 3</code> are <em>actual parameters</em>.</p>
+<p>To bind actual parameters to formal parameters is another important part of the subprograms. Binding can be done in two different ways. The first method is, <strong>positional parameters</strong>. It basically binds the first actual parameter to the first formal parameter, the second actual parameter to the second parameter, and so on. It is a good method, because it is <strong>safe</strong> and <strong>effective</strong>. Nevertheless, if parameter list is long, programmer can make parameter order mistakes. In this case, <strong>keyword parameters</strong> is a good method. The order is not important, but the formal names are important. The main advantage of keyword parameters is order is not important, so parameters can appear in any order and parameter correspondence errors can be avoided. On the other hand, the main disadvantage is programmer must know the formal parameter&rsquo;s names. <strong>Python, Ada, Fortran 95+</strong> allows the keyword parameters.</p>
+<p>Example: <code>sumer (length=my_length, arr=my_arr, total=my_total)</code> ==&gt; Python (Keyword Parameters)</p>
+<p>Python, Ada and Fotran 95+ allows us to combine both positional and keyword parameters. For example, <code>sumer(my_length, arr=my_arr, total=my_total)</code> is valid. The only restriction is after a keyword parameter is shown in parameter list, all parameters must be keyworded. So, <code>sumer(length=my_length, arr, total=my_total)</code> is a wrong function call, because <code>length=my_length</code> is a keyword parameter and after this one there is a positional parameter.</p>
+<p>Some languages, like C++, Python, Ruby, Ada, PHP can have <strong>default parameters</strong>. A default value can be used if no actual parameter is passed to the formal parameter in the subprogram header. For instance, we have a Python header:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#2838b0">def</span> <span style="color:#785840">save_student</span><span style="color:#888">(</span>name<span style="color:#888">,</span> surname<span style="color:#888">,</span> age<span style="color:#666">=</span><span style="color:#444">20</span><span style="color:#888">):</span>
+    <span style="color:#666">...</span>
+
+save_student<span style="color:#888">(</span><span style="color:#b83838">&#34;jack&#34;</span><span style="color:#888">,</span> <span style="color:#b83838">&#34;jones&#34;</span><span style="color:#888">)</span>
+save_student<span style="color:#888">(</span><span style="color:#b83838">&#34;jack&#34;</span><span style="color:#888">,</span> <span style="color:#b83838">&#34;jones&#34;</span><span style="color:#888">,</span> <span style="color:#444">23</span><span style="color:#888">)</span></code></pre></div>
+<p>The <code>save_student</code> function has a default parameter, <code>age</code>. If you pass a value for <code>age</code>, this value will be used while execution of the subprogram. When you call <code>save_student</code> like this, <code>save_student(&quot;jack&quot;, &quot;jones&quot;, 23)</code>, the age will be 23. But, if you do not any parameter for <code>age</code>, the subprogram will use <strong>20</strong>. For example, when you call <code>save_student(&quot;jack&quot;, &quot;jones&quot;)</code>, the <code>age</code> will be 20. In <strong>C++</strong>, default parameters must be appear last because parameters are <em>positionally</em> associated.</p>
+<h1 id="procedures-and-functions">Procedures and Functions</h1>
+<p>There are two distinct categories of subprograms: <strong>procedures</strong> and <strong>functions</strong>. Procedures are collections of statements and they define new statements. Actually, in most languages, procedures do not include as a separate form of subprograms. Functions can be defined as procedures.
+Functions structurally resemble procedures but semantically modeled on mathematical functions. They just return values. The main difference is <em>functions</em> return values, <em>procedures</em> do not. For example, you want to search a special value in array, but there is not a procedure to make this operation. So, you can write a procedure that searches the value in given array, and you can call it when you need whenever.</p>
+<p>Procedures can produce results in 2 different methods: The first method is, changing the not formal parameter values which can be visible in procedure. The second method is, if the procedure has formal parameters that allow the transfer of data to the caller, those parameters can be changed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#666">=</span> <span style="color:#444">12</span>
+
+<span style="color:#2838b0">def</span> <span style="color:#785840">fun</span><span style="color:#888">(</span>x<span style="color:#888">,</span> y<span style="color:#888">):</span>
+    x <span style="color:#666">+=</span> <span style="color:#444">2</span>      <span style="color:#888;font-style:italic"># Second method, formal parameter value is changed</span>
+    y <span style="color:#666">-=</span> <span style="color:#444">3</span>      <span style="color:#888;font-style:italic"># Second method, formal parameter values is changed</span>
+    a <span style="color:#666">=</span> x <span style="color:#666">+</span> y   <span style="color:#888;font-style:italic"># First method, not formal parameter but visible in fun is changed</span>
+
+fun<span style="color:#888">(</span><span style="color:#444">4</span><span style="color:#888">,</span> <span style="color:#444">5</span><span style="color:#888">)</span></code></pre></div>
+<p><em>Functions</em>, return the values. It can change both formal parameter value or any variable defined outside the function. In pure function returns a value, it does not effect. Nevertheless, in most languages, functions have side effects. Only return value expected to be effect.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#888;font-style:italic"># Pure function</span>
+<span style="color:#2838b0">def</span> <span style="color:#785840">divide</span><span style="color:#888">(</span>x<span style="color:#888">,</span> y<span style="color:#888">):</span>
+    <span style="color:#2838b0">return</span> x <span style="color:#666">/</span> y    <span style="color:#888;font-style:italic"># Only return value is effect</span>
+
+a <span style="color:#666">=</span> divide<span style="color:#888">(</span><span style="color:#444">12</span><span style="color:#888">,</span> <span style="color:#444">4</span><span style="color:#888">)</span></code></pre></div>
+<h1 id="semantic-models-of-parameter-passing">Semantic Models of Parameter Passing</h1>
+<p>Formal parameters are characterized by one of three distinct semantics models: (1) They can receive data from corresponding actual parameter, (2) they can transmit the actual parameter, and (3) they can do  both. They are named as <strong>in mode, out mode</strong> and <strong>inout mode</strong>, respectively.</p>
+<ul>
+<li><strong>In mode</strong>, the data is not being changed by subprogram.</li>
+<li><strong>Out mode</strong>, if there is no initial value and its value must be returned to the caller.</li>
+<li><strong>Inout mode</strong>, subprogram needs the given value, and must return its new value.</li>
+</ul>
+<p><img src="../assets/in_out_inout.jpeg" alt="In-Out-Inout Modes"></p>
+<h1 id="pass-by-value-in-mode">Pass-by-Value (In Mode)</h1>
+<p>Value of the actual parameter is used to initialized the corresponding formal parameters. After passing value, formal parameters acts as a local variable of the subprogram. Normally implemented by copying, because it is more efficient.</p>
+<ul>
+<li>
+<p><strong>Advantages:</strong> It is fast, in both linkage cost and access time. Actual variable is protected.</p>
+</li>
+<li>
+<p><strong>Disadvantages:</strong> Additional storage is required for the formal parameter. Also, it can be costly for large parameters. For example, an array with large elements might be costly.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0">int</span> n<span style="color:#888">;</span>
+
+procedure prod<span style="color:#888">(</span><span style="color:#2838b0">int</span> k<span style="color:#888">)</span> <span style="color:#888">{</span>
+    n <span style="color:#666">=</span> n <span style="color:#666">+</span> <span style="color:#444">1</span><span style="color:#888">;</span>          <span style="color:#888;font-style:italic">// n = 1
+</span><span style="color:#888;font-style:italic"></span>    k <span style="color:#666">=</span> k <span style="color:#666">+</span> <span style="color:#444">4</span><span style="color:#888">;</span>          <span style="color:#888;font-style:italic">// k = 4
+</span><span style="color:#888;font-style:italic"></span>    print<span style="color:#888">(</span>n<span style="color:#888">);</span>           <span style="color:#888;font-style:italic">// prints --&gt; 1
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span>
+n <span style="color:#666">=</span> <span style="color:#444">0</span><span style="color:#888">;</span>
+p<span style="color:#888">(</span>n<span style="color:#888">);</span>                   <span style="color:#888;font-style:italic">// n = 1 when after subprogram
+</span><span style="color:#888;font-style:italic"></span>print<span style="color:#888">(</span>n<span style="color:#888">);</span>               <span style="color:#888;font-style:italic">// prints --&gt; 1
+</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#2838b0;font-style:italic">int</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]</span> <span style="color:#666">=</span> <span style="color:#888">{</span><span style="color:#444">5</span><span style="color:#888">,</span> <span style="color:#444">7</span><span style="color:#888">,</span> <span style="color:#444">9</span><span style="color:#888">,</span> <span style="color:#444">11</span><span style="color:#888">};</span>
+<span style="color:#2838b0;font-style:italic">int</span> i<span style="color:#888">;</span>
+
+<span style="color:#2838b0;font-style:italic">void</span> <span style="color:#785840">fun</span><span style="color:#888">(</span><span style="color:#2838b0;font-style:italic">int</span> a<span style="color:#888">,</span> <span style="color:#2838b0;font-style:italic">int</span> b<span style="color:#888">)</span> <span style="color:#888">{</span>
+    i <span style="color:#666">=</span> <span style="color:#444">2</span><span style="color:#888">;</span>
+
+    <span style="color:#2838b0">if</span> <span style="color:#888">(</span>a <span style="color:#666">&lt;</span> b<span style="color:#888">)</span> <span style="color:#888">{</span>
+        a <span style="color:#666">=</span> a <span style="color:#666">+</span> i<span style="color:#888">;</span>      <span style="color:#888;font-style:italic">// a = 7
+</span><span style="color:#888;font-style:italic"></span>        i <span style="color:#666">=</span> i <span style="color:#666">+</span> <span style="color:#444">1</span><span style="color:#888">;</span>      <span style="color:#888;font-style:italic">// i = 3
+</span><span style="color:#888;font-style:italic"></span>        b <span style="color:#666">=</span> b <span style="color:#666">-</span> i<span style="color:#888">;</span>      <span style="color:#888;font-style:italic">// b = 4
+</span><span style="color:#888;font-style:italic"></span>    <span style="color:#888">}</span>
+    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+    <span style="color:#888;font-style:italic">// prints out ==&gt; 5 7 9 11
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span>
+main<span style="color:#888">()</span> <span style="color:#888">{</span>
+    i <span style="color:#666">=</span> <span style="color:#444">1</span><span style="color:#888">;</span>
+    fun<span style="color:#888">(</span>list<span style="color:#888">[</span>i<span style="color:#888">],</span> list<span style="color:#888">[</span>i<span style="color:#666">+</span><span style="color:#444">1</span><span style="color:#888">]);</span>        <span style="color:#888;font-style:italic">// call as fun(5, 7)
+</span><span style="color:#888;font-style:italic"></span>    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+    <span style="color:#888;font-style:italic">// prints out ==&gt; 5 7 9 11
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span></code></pre></div>
+<h1 id="pass-by-result-out-mode">Pass-by-Result (Out Mode)</h1>
+<p>When a parameter is passed by result, no value is transmitted to the subprogram. The corresponding formal parameter acts as a local variable, but at the end of the subprogram, its value is transmitted back to the caller&rsquo;s actual parameter.</p>
+<p>Nevertheless, there are potential problems. The first problem is which parameter is copied back will represent the current value. For example;</p>
+<pre tabindex="0"><code class="language-pseudocdoe" data-lang="pseudocdoe">subprogram sub(x, y) {
+    x &lt;- 3;
+    y &lt;- 5;
+}
+
+sub(p, p)   // p = 5</code></pre>
+<p>Which value will be returned? 3 or 5? This problem fixed with given order precedence. The last assigned value will be returned to <code>p</code>. It means that the order is important. So, p will be 5 after executed <code>sub()</code>.</p>
+<p>Other problem is time to evaluate the address of the actual parameter. There are two possible evaluation method, at the time of the call and at the time of the return. Actually, there is not a general rule for fixing problem. The decision up to language designer. Let&rsquo;s talk an example.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#2838b0">void</span> DoIt<span style="color:#888">(</span><span style="color:#2838b0">out</span> <span style="color:#2838b0;font-style:italic">int</span> x<span style="color:#888">,</span> <span style="color:#2838b0;font-style:italic">int</span> index<span style="color:#888">)</span> <span style="color:#888">{</span>
+    x <span style="color:#888">=</span> <span style="color:#444">17</span><span style="color:#888">;</span>
+    index <span style="color:#888">=</span> <span style="color:#444">42</span>
+<span style="color:#888">}</span>
+<span style="color:#888">...</span>
+sub <span style="color:#888">=</span> <span style="color:#444">21</span><span style="color:#888">;</span>
+DoIt<span style="color:#888">(</span>list<span style="color:#888">[</span>sub<span style="color:#888">],</span> sub<span style="color:#888">)</span> </code></pre></div>
+<p>The address of <code>list[sub]</code> is changed on the function, so <strong>17</strong> will be assigned to <code>list[42]</code> or <code>list[21]</code>? If the address evaluation is done at the beginning of the subprogram, <strong>17</strong> will be assigned to <code>list[21]</code>, because we have not changed the index, yet. On the other hand, if we evaluate the address at the end of the subprogram, <strong>17</strong> will be assigned to <code>list[42]</code>.</p>
+<h1 id="pass-by-value-result-inout-mode">Pass-by-Value-Result (Inout Mode)</h1>
+<p>It can think of combination of <em>pass-by-value</em> and <em>pass-by-result</em>. The actual value is used to initialize the formal parameter. Then, it acts as a local variable. Formal parameters have local storage. At termination, the value of the formal parameter is copied back. Also, pass-by-value-result is called as <strong>pass-by-copy</strong>, because actual parameter is copied to the formal parameter at the subprogram entry, and then copied back to subprogram termination.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0">int</span> n<span style="color:#888">;</span>
+
+procedure prod<span style="color:#888">(</span><span style="color:#2838b0">int</span> k<span style="color:#888">)</span> <span style="color:#888">{</span>
+    n <span style="color:#666">=</span> n <span style="color:#666">+</span> <span style="color:#444">1</span><span style="color:#888">;</span>          <span style="color:#888;font-style:italic">// n = 1
+</span><span style="color:#888;font-style:italic"></span>    k <span style="color:#666">=</span> k <span style="color:#666">+</span> <span style="color:#444">4</span><span style="color:#888">;</span>          <span style="color:#888;font-style:italic">// k = 4
+</span><span style="color:#888;font-style:italic"></span>    print<span style="color:#888">(</span>n<span style="color:#888">);</span>           <span style="color:#888;font-style:italic">// prints --&gt; 1
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span>
+n <span style="color:#666">=</span> <span style="color:#444">0</span><span style="color:#888">;</span>
+p<span style="color:#888">(</span>n<span style="color:#888">);</span>                   <span style="color:#888;font-style:italic">// n = 4 when after subprogram
+</span><span style="color:#888;font-style:italic"></span>print<span style="color:#888">(</span>n<span style="color:#888">);</span>               <span style="color:#888;font-style:italic">// prints --&gt; 4
+</span></code></pre></div>
+<h1 id="pass-by-reference-inout-mode">Pass-by-Reference (Inout Mode)</h1>
+<p>The second implementation model for inout model. Rather than copying the data, it passes the address of the data. Also, pass-by-reference called as <strong>pass-by-sharing</strong>. Actual parameter is shared with the called subprogram, and sharing actual data has bad results. I am going to dive into more details later. Basically, pass-by-reference, transmits an access path to the called subprogram rather than copying data. Passing address is more efficient, in terms of time and space. Also, it does not require duplicated storage, because we can access the actual parameter by using address. However, it has slower accesses than <em>pass-by-value</em>, because of additional level of indirect addressing. Moreover, potentially collisions and unwanted aliases would be occured. It is harmful to readability and reliability.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0">int</span> n<span style="color:#888">;</span>
+
+procedure prod<span style="color:#888">(</span><span style="color:#2838b0">int</span> k<span style="color:#888">)</span> <span style="color:#888">{</span>
+    n <span style="color:#666">=</span> n <span style="color:#666">+</span> <span style="color:#444">1</span><span style="color:#888">;</span>          <span style="color:#888;font-style:italic">// n = 1
+</span><span style="color:#888;font-style:italic"></span>    k <span style="color:#666">=</span> k <span style="color:#666">+</span> <span style="color:#444">4</span><span style="color:#888">;</span>          <span style="color:#888;font-style:italic">// n = 5, actually n and k are point to the same variable because of address
+</span><span style="color:#888;font-style:italic"></span>    print<span style="color:#888">(</span>n<span style="color:#888">);</span>           <span style="color:#888;font-style:italic">// prints --&gt; 5
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span>
+n <span style="color:#666">=</span> <span style="color:#444">0</span><span style="color:#888">;</span>
+p<span style="color:#888">(</span>n<span style="color:#888">);</span>                   <span style="color:#888;font-style:italic">// n = 5 when after subprogram
+</span><span style="color:#888;font-style:italic"></span>print<span style="color:#888">(</span>n<span style="color:#888">);</span>               <span style="color:#888;font-style:italic">// prints --&gt; 5
+</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#2838b0;font-style:italic">int</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]</span> <span style="color:#666">=</span> <span style="color:#888">{</span><span style="color:#444">5</span><span style="color:#888">,</span> <span style="color:#444">7</span><span style="color:#888">,</span> <span style="color:#444">9</span><span style="color:#888">,</span> <span style="color:#444">11</span><span style="color:#888">};</span>
+<span style="color:#2838b0;font-style:italic">int</span> i<span style="color:#888">;</span>
+
+<span style="color:#2838b0;font-style:italic">void</span> <span style="color:#785840">fun</span><span style="color:#888">(</span><span style="color:#2838b0;font-style:italic">int</span> a<span style="color:#888">,</span> <span style="color:#2838b0;font-style:italic">int</span> b<span style="color:#888">)</span> <span style="color:#888">{</span>
+    i <span style="color:#666">=</span> <span style="color:#444">2</span><span style="color:#888">;</span>
+
+    <span style="color:#2838b0">if</span> <span style="color:#888">(</span>a <span style="color:#666">&lt;</span> b<span style="color:#888">)</span> <span style="color:#888">{</span>
+        a <span style="color:#666">=</span> a <span style="color:#666">+</span> i<span style="color:#888">;</span>      <span style="color:#888;font-style:italic">// a = 7 --&gt; list[1] = 7
+</span><span style="color:#888;font-style:italic"></span>        i <span style="color:#666">=</span> i <span style="color:#666">+</span> <span style="color:#444">1</span><span style="color:#888">;</span>      <span style="color:#888;font-style:italic">// i = 3
+</span><span style="color:#888;font-style:italic"></span>        b <span style="color:#666">=</span> b <span style="color:#666">-</span> i<span style="color:#888">;</span>      <span style="color:#888;font-style:italic">// b = 4 --&gt; list[2] = 4
+</span><span style="color:#888;font-style:italic"></span>    <span style="color:#888">}</span>
+    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+    <span style="color:#888;font-style:italic">// prints out ==&gt; 7 4 9 11
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span>
+main<span style="color:#888">()</span> <span style="color:#888">{</span>
+    i <span style="color:#666">=</span> <span style="color:#444">1</span><span style="color:#888">;</span>
+    fun<span style="color:#888">(</span>list<span style="color:#888">[</span>i<span style="color:#888">],</span> list<span style="color:#888">[</span>i<span style="color:#666">+</span><span style="color:#444">1</span><span style="color:#888">]);</span>        <span style="color:#888;font-style:italic">// a = list[1], b = list[2]
+</span><span style="color:#888;font-style:italic"></span>    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+    <span style="color:#888;font-style:italic">// prints out ==&gt; 7 4 9 11
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span></code></pre></div>
+<h1 id="pass-by-name-inout-mode">Pass-by-Name (Inout Mode)</h1>
+<p>It is an <em>inout mode</em> parameter transmission method. Basically, the actual parameters are being substituted with formal parameters that are occurrences in subprogram. The main advantage is <em>flexibility</em>. Nevertheless, disadvantages of the pass-by-name are <em>slow execution, difficultto implement</em> and <em>confusing</em>. That&rsquo;s why pass-by-name is not a part of widely used programming languages.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#2838b0;font-style:italic">int</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]</span> <span style="color:#666">=</span> <span style="color:#888">{</span><span style="color:#444">5</span><span style="color:#888">,</span> <span style="color:#444">7</span><span style="color:#888">,</span> <span style="color:#444">9</span><span style="color:#888">,</span> <span style="color:#444">11</span><span style="color:#888">}</span>
+
+<span style="color:#2838b0;font-style:italic">int</span> i<span style="color:#888">;</span>
+<span style="color:#2838b0;font-style:italic">void</span> <span style="color:#785840">fun</span><span style="color:#888">(</span><span style="color:#2838b0;font-style:italic">int</span> a<span style="color:#888">,</span> <span style="color:#2838b0;font-style:italic">int</span> b<span style="color:#888">)</span> <span style="color:#888">{</span>
+    i <span style="color:#666">=</span> <span style="color:#444">2</span><span style="color:#888">;</span>
+
+    <span style="color:#2838b0">if</span> <span style="color:#888">(</span>a <span style="color:#666">&lt;</span> b<span style="color:#888">)</span> <span style="color:#888">{</span>
+        a <span style="color:#666">=</span> a <span style="color:#666">+</span> i<span style="color:#888">;</span>
+        i <span style="color:#666">=</span> i <span style="color:#666">+</span> <span style="color:#444">1</span><span style="color:#888">;</span>
+        b <span style="color:#666">=</span> b <span style="color:#666">-</span> i<span style="color:#888">;</span>
+    <span style="color:#888">}</span>
+    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+<span style="color:#888">}</span>
+main<span style="color:#888">()</span> <span style="color:#888">{</span>
+    i <span style="color:#666">=</span> <span style="color:#444">1</span><span style="color:#888">;</span>
+    fun<span style="color:#888">(</span>list<span style="color:#888">[</span>i<span style="color:#888">],</span> list<span style="color:#888">[</span>i<span style="color:#666">+</span><span style="color:#444">1</span><span style="color:#888">]);</span>
+    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+
+<span style="color:#888">}</span></code></pre></div>
+<p>Let&rsquo;s give an example. Consider that we have a function like above and we use <em>pass-by-name</em> transmission. We actually change the formal parameters with actual parameters. In fact, our subprogram would be like below.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#2838b0;font-style:italic">int</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]</span> <span style="color:#666">=</span> <span style="color:#888">{</span><span style="color:#444">5</span><span style="color:#888">,</span> <span style="color:#444">7</span><span style="color:#888">,</span> <span style="color:#444">9</span><span style="color:#888">,</span> <span style="color:#444">11</span><span style="color:#888">}</span>
+
+<span style="color:#2838b0;font-style:italic">int</span> i<span style="color:#888">;</span>
+<span style="color:#2838b0;font-style:italic">void</span> <span style="color:#785840">fun</span><span style="color:#888">(</span><span style="color:#2838b0;font-style:italic">int</span> a<span style="color:#888">,</span> <span style="color:#2838b0;font-style:italic">int</span> b<span style="color:#888">)</span> <span style="color:#888">{</span>
+    <span style="color:#888;font-style:italic">// a --&gt; list[i]
+</span><span style="color:#888;font-style:italic"></span>    <span style="color:#888;font-style:italic">// b --&gt; list[i+1]
+</span><span style="color:#888;font-style:italic"></span>    i <span style="color:#666">=</span> <span style="color:#444">2</span><span style="color:#888">;</span>
+
+    <span style="color:#2838b0">if</span> <span style="color:#888">(</span>list<span style="color:#888">[</span>i<span style="color:#888">]</span> <span style="color:#666">&lt;</span> list<span style="color:#888">[</span>i<span style="color:#666">+</span><span style="color:#444">1</span><span style="color:#888">])</span> <span style="color:#888">{</span>
+        list<span style="color:#888">[</span>i<span style="color:#888">]</span> <span style="color:#666">=</span> list<span style="color:#888">[</span>i<span style="color:#888">]</span> <span style="color:#666">+</span> i<span style="color:#888">;</span>      <span style="color:#888;font-style:italic">// list[2] = list[2] + 2 ==&gt; list[2] = 9
+</span><span style="color:#888;font-style:italic"></span>        i <span style="color:#666">=</span> i <span style="color:#666">+</span> <span style="color:#444">1</span><span style="color:#888">;</span>                  <span style="color:#888;font-style:italic">// i = 3
+</span><span style="color:#888;font-style:italic"></span>        list<span style="color:#888">[</span>i<span style="color:#666">+</span><span style="color:#444">1</span><span style="color:#888">]</span> <span style="color:#666">=</span> list<span style="color:#888">[</span>i<span style="color:#666">+</span><span style="color:#444">1</span><span style="color:#888">]</span> <span style="color:#666">-</span> i<span style="color:#888">;</span>  <span style="color:#888;font-style:italic">// list[4] = list[4] - 3 ==&gt; list[4] = 8
+</span><span style="color:#888;font-style:italic"></span>    <span style="color:#888">}</span>
+    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+    <span style="color:#888;font-style:italic">// prints out ==&gt; 5 9 9 8
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span>
+main<span style="color:#888">()</span> <span style="color:#888">{</span>
+    i <span style="color:#666">=</span> <span style="color:#444">1</span><span style="color:#888">;</span>
+    fun<span style="color:#888">(</span>list<span style="color:#888">[</span>i<span style="color:#888">],</span> list<span style="color:#888">[</span>i<span style="color:#666">+</span><span style="color:#444">1</span><span style="color:#888">]);</span>        <span style="color:#888;font-style:italic">// we actually call like fun(list[i], list[i+1])
+</span><span style="color:#888;font-style:italic"></span>    print<span style="color:#888">(</span>list<span style="color:#888">[</span><span style="color:#444">1</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">2</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">3</span><span style="color:#888">],</span> list<span style="color:#888">[</span><span style="color:#444">4</span><span style="color:#888">]);</span>
+    <span style="color:#888;font-style:italic">// prints out ==&gt; 5 9 9 8
+</span><span style="color:#888;font-style:italic"></span>
+<span style="color:#888">}</span></code></pre></div>
+<h1 id="conclusion">Conclusion</h1>
+<p>I have covered <em>subprograms</em> and <em>parameter passing</em> in this article. If you have any question or catch my mistake, please do not hesitate to contact with me. Happy new year!</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/javascript-intro/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			
+			<span>
+			&copy; <time datetime="2022-01-02 11:54:14.676899 &#43;0300 &#43;03 m=&#43;0.103024722">2022</time> Gökhan Özeloğlu. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
