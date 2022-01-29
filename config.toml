@@ -9,6 +9,12 @@ theme = "tale"
     title = "About"
     url = "/about/"
     weight = 0
+  [[menu.main]]
+    identifier = "resume"
+    name = "Rèsume"
+    title = "Rèsume"
+    url = "/resume/"
+    weight = 0
 [Author]
     name = "Gökhan Özeloğlu"
 
