@@ -40,6 +40,14 @@
             </a>
         </li>
     
+        <li>
+            <a href="/resume/">
+                
+                <span>Rèsume</span>
+                
+            </a>
+        </li>
+    
 </ul>
 			</div>
 		</nav>
@@ -52,7 +60,7 @@
     <span>Written by</span>
         Gökhan Özeloğlu
         <br>
-        <span>on&nbsp;</span><time datetime="2020-05-05 15:25:09 &#43;0300 &#43;03">May 5, 2020</time>
+        <span>on&nbsp;</span><time datetime="2020-05-05 15:25:09 &#43;0300 &#43;0300">May 5, 2020</time>
 </div>
 
 		<h1 class="post-title">JavaScript - Intro</h1>
@@ -70,21 +78,22 @@
 <p>JavaScript comments are similar to C-like languages. There are 2 options to write comments in our codes.</p>
 <h4 id="inline-comments"><strong>Inline Comments</strong></h4>
 <p>Any text between <code>//</code> is ignored by JavaScript and does not affect the program.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#34;This message will be visible&#34;</span><span style="color:#888">);</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#34;This message will be visible&#34;</span><span style="color:#888">);</span>
 <span style="color:#888;font-style:italic">// This line will not be visible
 </span></code></pre></div>
 <h4 id="block-comments"><strong>Block Comments</strong></h4>
 <p>Any text between <code>/*</code> and <code>*/</code> is ignored by JavaScript and does not affect the program.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#34;This message will be visible&#34;</span><span style="color:#888">);</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#34;This message will be visible&#34;</span><span style="color:#888">);</span>
 <span style="color:#888;font-style:italic">/*
 </span><span style="color:#888;font-style:italic">* This block will not be visible
 </span><span style="color:#888;font-style:italic">* console.log(&#34;This block will be ignored);
-</span><span style="color:#888;font-style:italic">*/</span></code></pre></div>
+</span><span style="color:#888;font-style:italic">*/</span>
+</code></pre></div>
 <h2 id="identifiers">Identifiers</h2>
 <p>Simply, identifiers are the variable that we defined and is being used in the program. There are some rules that we follow to write proper code. They should be start with letters, underscore(_), or dollar sign(\$). Subsequent characters can be letters, underscore(_), or digits(from $0$ to $9$). Also, there are some <em>keywords</em> and <em>reserved words</em>. These are pre-defined names that defined by JavaScript and you cannot use them as a variable.</p>
 <h2 id="semicolon">Semicolon</h2>
 <p>Like most of the other programming languages, there is semicolon(;) in JavaScript. At the end of the statement, you put semicolon to identify statement is end. But, you do not need to put semicolon. It is optional as long as the statements are written separate lines.
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#444">12</span><span style="color:#888">;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#444">12</span><span style="color:#888">;</span>
 <span style="color:#2838b0;font-style:italic">var</span> b <span style="color:#666">=</span> <span style="color:#444">15</span>
 <span style="color:#888;font-style:italic">// Both of them are valid
 </span></code></pre></div></p>
@@ -100,20 +109,20 @@
 </ul>
 <h3 id="number-data-type">Number Data Type</h3>
 <p>It represents both integer and float numbers.</p>
-<p><code>MAX_VALUE</code>: The highest number in the JavaScript. Its value is <code>1.7976931348623157e+308</code>. <code>Number.MAX_VALUE</code> gives you this number. <br>
+<p><code>MAX_VALUE</code>: The highest number in the JavaScript. Its value is <code>1.7976931348623157e+308</code>. <code>Number.MAX_VALUE</code> gives you this number.<br>
 <code>MIN_VALUE</code>: The smallest number in the JavaScript. Its value is <code>5e-324</code>. <code>Number.MIN_VALUE</code> gives you this number.</p>
 <h4 id="symbolic-numbers">Symbolic Numbers</h4>
-<p><code>Infinity</code>: This is any number divided by 0 or an attempt to multiply <code>MAX_VALUE</code> by an Integer which is bigger than 1. <br>
-<code>-Infinity</code>: This is any number divided by -0 or an attemp to multiply <code>MAX_VALUE</code> by an Integer which is smaller than -1. <br>
+<p><code>Infinity</code>: This is any number divided by 0 or an attempt to multiply <code>MAX_VALUE</code> by an Integer which is bigger than 1.<br>
+<code>-Infinity</code>: This is any number divided by -0 or an attemp to multiply <code>MAX_VALUE</code> by an Integer which is smaller than -1.<br>
 <code>NaN</code>: <strong>Not-a-Number</strong>. It is a number which denotes the unrepresentable number like <em>complex numbers</em>.</p>
 <h3 id="string-data-type">String Data Type</h3>
 <p>String is similar to other languages. You can use <code>&quot;&quot;</code> or <code>''</code> for string.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#b83838">&#34;Sample String&#34;</span><span style="color:#888">;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#b83838">&#34;Sample String&#34;</span><span style="color:#888">;</span>
 <span style="color:#2838b0;font-style:italic">var</span> b <span style="color:#666">=</span> <span style="color:#b83838">&#39;Other string&#39;</span><span style="color:#888">;</span>
 <span style="color:#888;font-style:italic">// Both of them are valid
 </span></code></pre></div>
 <p>Also, you can print out the single or double quotations. <code>&quot;'&quot;</code> evaluates <code>'</code> and <code>'&quot;'</code> evaluates <code>&quot;</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#39;&#34;Hello&#34; World&#39;</span><span style="color:#888">);</span>   <span style="color:#888;font-style:italic">// &#34;Hello&#34; World
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#39;&#34;Hello&#34; World&#39;</span><span style="color:#888">);</span>   <span style="color:#888;font-style:italic">// &#34;Hello&#34; World
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#34;&#39;Hello&#39; World&#34;</span><span style="color:#888">);</span>   <span style="color:#888;font-style:italic">// &#39;Hello&#39; world
 </span></code></pre></div>
 <p>Moreover, string is immutable in JavaScript. So, you cannot modify the string after declaration. However, you can do some operations over the strings like substring or concatenation.</p>
@@ -127,7 +136,7 @@
 <p>If a variable does not exists, or has been declared but has never had a value assigned to it, the undefined value is returned.</p>
 <h2 id="typeof-operator"><em>typeof</em> Operator</h2>
 <p>We can use the <code>typeof</code> operator to learn a variable&rsquo;s type.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#b83838">&#34;sample string&#34;</span><span style="color:#888">;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#b83838">&#34;sample string&#34;</span><span style="color:#888">;</span>
 console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#2838b0">typeof</span><span style="color:#888">(</span>a<span style="color:#888">));</span>     <span style="color:#888;font-style:italic">// prints out &#34;string&#34;
 </span><span style="color:#888;font-style:italic"></span>
 <span style="color:#2838b0;font-style:italic">var</span> b <span style="color:#666">=</span> <span style="color:#444">12</span><span style="color:#888">;</span>
@@ -138,7 +147,7 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
 </span></code></pre></div>
 <h2 id="dynamic-typing">Dynamic Typing</h2>
 <p>Sometimes we want to change the variable&rsquo;s type during the program. We use dynamic typing for this purpose. Once we defined a variable, we can change the value with different type.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#444">1</span><span style="color:#888">;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> <span style="color:#444">1</span><span style="color:#888">;</span>
 console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#34;a is: &#34;</span> <span style="color:#666">+</span> a<span style="color:#888">);</span>
 console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#34;a&#39;s type is: &#34;</span> <span style="color:#666">+</span> <span style="color:#2838b0">typeof</span><span style="color:#888">(</span>a<span style="color:#888">));</span>
 <span style="color:#888;font-style:italic">// a is: 1
@@ -169,7 +178,7 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
 <p>Addition(+), subtraction(-), multiplication(*), division(/), remainder(%), exponention(**) are the same as in the other languages.</p>
 <h2 id="equality-operator-">Equality Operator (==)</h2>
 <p>It compares two operands and return <code>true</code> if they are equal. Otherwise, it returns <code>false</code>. But, there is a different rule apart from other languages. If you try to compare two operands which has the different types, JavaScript applies the strict comparison. For example,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">==</span> <span style="color:#444">1</span><span style="color:#888">);</span>                <span style="color:#888;font-style:italic">// True
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">==</span> <span style="color:#444">1</span><span style="color:#888">);</span>                <span style="color:#888;font-style:italic">// True
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">==</span> <span style="color:#b83838">&#34;1&#34;</span><span style="color:#888">);</span>              <span style="color:#888;font-style:italic">// True
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">==</span> <span style="color:#b83838">&#39;1&#39;</span><span style="color:#888">);</span>              <span style="color:#888;font-style:italic">// True
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">==</span> <span style="color:#444;font-style:italic">true</span><span style="color:#888">);</span>             <span style="color:#888;font-style:italic">// True
@@ -179,7 +188,7 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
 </span></code></pre></div>
 <h2 id="inequality-operator-">Inequality Operator (!=)</h2>
 <p>It compares two operands and return <code>true</code> if they are not equal. Otherwise, it returns <code>false</code>. If you try to compare two operands which has the different types, JavaScript applies the strict comparison. It converts the appropriate type. For example,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!=</span> <span style="color:#444">1</span><span style="color:#888">);</span>                <span style="color:#888;font-style:italic">// False
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!=</span> <span style="color:#444">1</span><span style="color:#888">);</span>                <span style="color:#888;font-style:italic">// False
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!=</span> <span style="color:#b83838">&#34;1&#34;</span><span style="color:#888">);</span>              <span style="color:#888;font-style:italic">// False
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!=</span> <span style="color:#b83838">&#39;1&#39;</span><span style="color:#888">);</span>              <span style="color:#888;font-style:italic">// False
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!=</span> <span style="color:#444;font-style:italic">true</span><span style="color:#888">);</span>             <span style="color:#888;font-style:italic">// False
@@ -189,7 +198,7 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
 </span></code></pre></div>
 <h2 id="object-comparision">Object Comparision</h2>
 <p>While comparing two objects, JavaScript looks at the memory address of the objects. If the adresses are different, so objects are different.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0">class</span> SampleObject <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0">class</span> SampleObject <span style="color:#888">{</span>
 
     constructor<span style="color:#888">(</span>a<span style="color:#888">)</span> <span style="color:#888">{</span>
         <span style="color:#2838b0">this</span><span style="color:#888">.</span>a <span style="color:#666">=</span> a<span style="color:#888">;</span>
@@ -202,10 +211,11 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
 <span style="color:#2838b0;font-style:italic">var</span> object2 <span style="color:#666">=</span> <span style="color:#2838b0">new</span> SampleObject<span style="color:#888">(</span><span style="color:#444">12</span><span style="color:#888">);</span>
 
 <span style="color:#888;font-style:italic">// object1 reference set to the object2
-</span><span style="color:#888;font-style:italic"></span>object1 <span style="color:#666">=</span> object2<span style="color:#888">;</span></code></pre></div>
+</span><span style="color:#888;font-style:italic"></span>object1 <span style="color:#666">=</span> object2<span style="color:#888">;</span>
+</code></pre></div>
 <h2 id="strict-equality-">Strict Equality (===)</h2>
 <p>If the operands are strictly equal and has the same type, it returns <code>true</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">===</span> <span style="color:#444">1</span><span style="color:#888">);</span>               <span style="color:#888;font-style:italic">// True
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">===</span> <span style="color:#444">1</span><span style="color:#888">);</span>               <span style="color:#888;font-style:italic">// True
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">===</span> <span style="color:#b83838">&#34;1&#34;</span><span style="color:#888">);</span>             <span style="color:#888;font-style:italic">// False
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#39;1&#39;</span> <span style="color:#666">===</span> <span style="color:#444">1</span><span style="color:#888">);</span>             <span style="color:#888;font-style:italic">// False
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">0</span> <span style="color:#666">===</span> <span style="color:#444;font-style:italic">false</span><span style="color:#888">);</span>           <span style="color:#888;font-style:italic">// False
@@ -215,7 +225,7 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
 </span></code></pre></div>
 <h2 id="strict-inequality-">Strict Inequality (!==)</h2>
 <p>If the operands are strictly not equal and has not the same type, it returns <code>true</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!==</span> <span style="color:#444">1</span><span style="color:#888">);</span>               <span style="color:#888;font-style:italic">// False
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!==</span> <span style="color:#444">1</span><span style="color:#888">);</span>               <span style="color:#888;font-style:italic">// False
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">1</span> <span style="color:#666">!==</span> <span style="color:#b83838">&#34;1&#34;</span><span style="color:#888">);</span>             <span style="color:#888;font-style:italic">// True
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#b83838">&#39;1&#39;</span> <span style="color:#666">!==</span> <span style="color:#444">1</span><span style="color:#888">);</span>             <span style="color:#888;font-style:italic">// True
 </span><span style="color:#888;font-style:italic"></span>console<span style="color:#888">.</span>log<span style="color:#888">(</span><span style="color:#444">0</span> <span style="color:#666">!==</span> <span style="color:#444;font-style:italic">false</span><span style="color:#888">);</span>           <span style="color:#888;font-style:italic">// True
@@ -225,20 +235,22 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
 </span></code></pre></div>
 <h2 id="functions">Functions</h2>
 <p>Functions are similar to other languages, but there are some differents in some usages. Functions are declared with <code>function</code> keyword and it is a <code>Function</code> object property. By default, functions return the value <code>undefined</code>. If you want to return something different, you need to return any other statement with <code>return</code> keyword. A function example,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> multiply<span style="color:#888">(</span>x<span style="color:#888">,</span> y<span style="color:#888">)</span> <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> multiply<span style="color:#888">(</span>x<span style="color:#888">,</span> y<span style="color:#888">)</span> <span style="color:#888">{</span>
     <span style="color:#2838b0">return</span> x <span style="color:#666">*</span> y<span style="color:#888">;</span>
-<span style="color:#888">}</span></code></pre></div>
+<span style="color:#888">}</span>
+</code></pre></div>
 <p>Also, we can define function expressions like <em>anonymous function</em>. Function names are omitted. Here is a example,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">()</span> <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">()</span> <span style="color:#888">{</span>
 
     <span style="color:#2838b0;font-style:italic">var</span> addition <span style="color:#666">=</span> <span style="color:#2838b0;font-style:italic">function</span><span style="color:#888">(</span>x<span style="color:#888">,</span> y<span style="color:#888">)</span> <span style="color:#888">{</span>
         <span style="color:#2838b0">return</span> x <span style="color:#666">+</span> y<span style="color:#888">;</span>
     <span style="color:#888">}</span>
 
     console<span style="color:#888">.</span>log<span style="color:#888">(</span>addition<span style="color:#888">(</span><span style="color:#444">12</span><span style="color:#888">));</span>
-<span style="color:#888">}</span></code></pre></div>
+<span style="color:#888">}</span>
+</code></pre></div>
 <p>Also, we can define named functions. These can be property of the variable or reference of the variable. Example,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">()</span> <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">()</span> <span style="color:#888">{</span>
 
     <span style="color:#888;font-style:italic">// Named function --&gt; As a property of the math variable
 </span><span style="color:#888;font-style:italic"></span>    <span style="color:#2838b0;font-style:italic">var</span> math <span style="color:#666">=</span> <span style="color:#888">{</span>
@@ -264,13 +276,14 @@ console<span style="color:#888">.</span>log<span style="color:#888">(</span><spa
     <span style="color:#888">}</span>
 
     console<span style="color:#888">.</span>log<span style="color:#888">(</span>div<span style="color:#888">(</span><span style="color:#444">10</span><span style="color:#888">,</span> <span style="color:#444">5</span><span style="color:#888">));</span>
-<span style="color:#888">}</span></code></pre></div>
+<span style="color:#888">}</span>
+</code></pre></div>
 <h2 id="var-let-and-const">var, let, and const</h2>
 <p>There some different ways to define variables in JavaScript and there are some minor differences between them.</p>
 <h4 id="var"><strong>var</strong></h4>
 <p>We use <code>var</code> to define variable. It creates a local variable that is accessible in declared scope. It will
 not be visible out of the declared scope. Also we can change its value after defined it.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">(</span>input<span style="color:#888">)</span> <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">(</span>input<span style="color:#888">)</span> <span style="color:#888">{</span>
 
     <span style="color:#2838b0;font-style:italic">var</span> a <span style="color:#666">=</span> input<span style="color:#888">;</span>
 
@@ -287,7 +300,7 @@ not be visible out of the declared scope. Also we can change its value after def
 <p>In this example, <code>input</code> is 11 and we defined <code>a</code> in function scope. When if block is executed, we initialized the <code>a</code> again and incremented by 1. <code>a</code> value is still 12 after if block because if block is in function scope. Function includes if block.</p>
 <h4 id="let"><strong>let</strong></h4>
 <p>We can also use <code>let</code> keyword to define a variable with limited scope. Once we defined the variable, it is only accessable from this scope. When we try to access the variable from out of the scope, we cannot access.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">(</span>input<span style="color:#888">)</span> <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">(</span>input<span style="color:#888">)</span> <span style="color:#888">{</span>
 
     <span style="color:#2838b0;font-style:italic">let</span> a <span style="color:#666">=</span> input<span style="color:#888">;</span>
 
@@ -301,19 +314,21 @@ not be visible out of the declared scope. Also we can change its value after def
 <span style="color:#888;font-style:italic">// input = 11
 </span></code></pre></div>
 <p>In this example, firstly, we created <code>a</code> and assigned to <code>input</code>. In if-block, we declared again and assigned <code>input+1</code>. So, our output is <code>12</code> for the first one. When we go out of the if-block, <code>a</code> is still 11 and output will be <code>11</code>. That&rsquo;s because our <code>a</code> variable which has <code>12</code> is defined in if-block and it is valid in if scope. Also, we cannot re-define a variable in the same scope. If we try to define a variable again, it will cause an <em>Error</em>. Below example is invalid and error will be occurred.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">(</span>input<span style="color:#888">)</span> <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">(</span>input<span style="color:#888">)</span> <span style="color:#888">{</span>
     <span style="color:#2838b0;font-style:italic">let</span> a <span style="color:#666">=</span> <span style="color:#444">12</span><span style="color:#888">;</span>
 
     <span style="color:#888;font-style:italic">// This line will be caused error
 </span><span style="color:#888;font-style:italic"></span>    <span style="color:#2838b0;font-style:italic">let</span> a <span style="color:#666">=</span> <span style="color:#444">13</span><span style="color:#888">;</span>
-<span style="color:#888">}</span></code></pre></div>
+<span style="color:#888">}</span>
+</code></pre></div>
 <h4 id="const"><strong>const</strong></h4>
 <p>We can only define once and cannot be reassigned with another value in <code>const</code> variables. Also, <code>const</code> variable should always be initialized. Otherwise, error will be occurred.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">()</span> <span style="color:#888">{</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#2838b0;font-style:italic">function</span> main<span style="color:#888">()</span> <span style="color:#888">{</span>
     <span style="color:#2838b0">const</span> a <span style="color:#666">=</span> <span style="color:#444">12</span><span style="color:#888">;</span>
 
     <span style="color:#2838b0">const</span> b<span style="color:#888">;</span>    <span style="color:#888;font-style:italic">// This wrong because it not initialized
-</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span></code></pre></div>
+</span><span style="color:#888;font-style:italic"></span><span style="color:#888">}</span>
+</code></pre></div>
 
 
 		
@@ -331,7 +346,7 @@ not be visible out of the declared scope. Also we can change its value after def
         		<footer>
 			
 			<span>
-			&copy; <time datetime="2022-01-02 15:09:42.66002 &#43;0300 &#43;03 m=&#43;0.052043987">2022</time> Gökhan Özeloğlu. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2022-01-29 18:05:57.616392348 &#43;0000 UTC m=&#43;0.146059331">2022</time> Gökhan Özeloğlu. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 
