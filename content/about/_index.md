@@ -1,14 +1,14 @@
 ---
 title: "About"
-date: 2022-01-01T21:29:42+03:00
+date: 2024-06-09T09:00:42+03:00
 draft: false
 ---
 
 Hi,
 
-My name is **Gökhan Özeloğlu**. I am a software engineer at [Yemeksepeti](https://techhub.yemeksepeti.com/).
+My name is **Gökhan Özeloğlu**. I am a software engineer at [Getir](https://getir.com/).
 
-I have graduated from the [Hacettepe University](http://cs.hacettepe.edu.tr/) in 2021. I mostly write **Go** and try to contribute to open source projects on **GitHub**. Some of the open source projects that I've written and contributed are:
+I have graduated from the [Hacettepe University](http://cs.hacettepe.edu.tr/) in 2021. I mostly write **Go** and **Java**. Also, I try to contribute to open source projects on **GitHub**. Some of the open source projects that I've written and contributed are:
 
 * [cache](https://github.com/gozeloglu/cache)
 * [gop-3](https://github.com/gozeloglu/gop-3)
