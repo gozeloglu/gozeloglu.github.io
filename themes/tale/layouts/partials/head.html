@@ -1,33 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-		<!-- Google Analytics -->
-		{{ template "_internal/google_analytics_async.html" . }}
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		{{- if .IsHome }}
-			<meta name="description" content="{{ .Site.Params.Description }}">
-		{{- else if .Description }}
-			<meta name="description" content="{{ .Description }}">
-		{{- end }}
-
-		<title>{{- if .IsHome }}{{ .Site.Title }}{{- else }}{{ .Title }} &middot; {{ .Site.Title }}{{- end }}</title>
-
-		<!-- CSS -->
-		{{- $inServerMode	:= .Site.IsServer }}
-		{{- $cssTarget		:= "css/style.css" }}
-		{{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
-		{{- $style			:= resources.Get "scss/tale.scss" | toCSS $cssOptions }}
-		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-		<link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
-		{{ range .Site.Params.css -}}
-			<link rel="stylesheet" href="{{ . | relURL }}">
-		{{ end -}}
-
-		<!-- Favicon -->
-		<link rel="icon" href="favicon.ico" />
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relURL }}">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{ "images/favicon-16x16.png" | relURL }}">
-		<link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
-
-		<!-- RSS -->
-		<link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-	</head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">{{ template "_internal/google_analytics.html" . }} {{- if .IsHome }} {{- else if .Description }} {{- end }} {{- $inServerMode := .Site.IsServer }} {{- $cssTarget := "css/style.css" }} {{- $cssOptions := cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }} {{- $style := resources.Get "scss/tale.scss" | toCSS $cssOptions }} {{ range .Site.Params.css -}} {{ end -}}</span></p>
+</body>
+</html>
