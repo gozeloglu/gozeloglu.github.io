@@ -1,0 +1,83 @@
+/* Basic Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A professional, common font stack */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light, clean background */
+    color: #333; /* Dark text for readability */
+    line-height: 1.6;
+}
+
+/* Container for the content */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff; /* White content area */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #007bff; /* A professional blue accent */
+    color: #fff;
+    border-radius: 8px 8px 0 0; /* Match main container, top only */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+header h2 {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Section Styling */
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Text and List Styling */
+p {
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type: square; /* Semi-formal bullet point style */
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.9em;
+}
