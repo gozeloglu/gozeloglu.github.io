@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Gökhan Özeloğlu</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Gökhan Özeloğlu</description>
+    <title>PaperMod on Gökhan Özeloğlu</title>
+    <link>http://localhost:1313/tags/papermod/</link>
+    <description>Recent content in PaperMod on Gökhan Özeloğlu</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 27 Aug 2026 21:30:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Start with Hugo and PaperMod</title>
       <link>http://localhost:1313/posts/hugo-ve-papermod/</link>
       <pubDate>Thu, 27 Aug 2026 21:30:00 +0300</pubDate>
       <guid>http://localhost:1313/posts/hugo-ve-papermod/</guid>
       <description>An overview of Hugo and key features of the PaperMod theme.</description>
-    </item>
-    <item>
-      <title>Hello World! First Blog Post</title>
-      <link>http://localhost:1313/posts/merhaba-dunya/</link>
-      <pubDate>Thu, 27 Aug 2026 21:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/posts/merhaba-dunya/</guid>
-      <description>The inaugural blog post for this personal site powered by PaperMod.</description>
     </item>
   </channel>
 </rss>
