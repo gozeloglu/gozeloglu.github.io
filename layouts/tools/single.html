@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting to {{ .Title }}</title>
+  <link rel="canonical" href="{{ .Params.link | default "/json/" | absURL }}">
+  <meta http-equiv="refresh" content="0; url={{ .Params.link | default "/json/" | absURL }}">
+  <script>window.location.replace("{{ .Params.link | default "/json/" | absURL }}");</script>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ .Params.link | default "/json/" | absURL }}">{{ .Title }}</a>...</p>
+</body>
+</html>

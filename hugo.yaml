@@ -1,5 +1,6 @@
 baseURL: 'https://ozeloglu.io/'
-locale: 'tr-TR'
+locale: 'en-US'
+defaultContentLanguage: 'en'
 title: 'Gökhan Özeloğlu'
 theme: 'PaperMod'
 
@@ -11,6 +12,11 @@ buildExpired: false
 pagination:
   pagerSize: 5
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 outputs:
   home:
     - HTML
@@ -19,21 +25,22 @@ outputs:
 
 params:
   env: production
+  mainSections: ["posts"]
   title: "Gökhan Özeloğlu"
-  description: "Kişisel web sitesi ve blog."
-  keywords: [Blog, Portfolyo, Yazılım, Teknoloji]
+  description: "Personal website and blog."
+  keywords: [Blog, Portfolio, Software, Technology]
   author: "Gökhan Özeloğlu"
-  DateFormat: "2 January 2006"
+  DateFormat: "January 2, 2006"
   defaultTheme: auto
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -46,18 +53,18 @@ params:
   profileMode:
     enabled: true
     title: "Gökhan Özeloğlu"
-    subtitle: "Yazılım Geliştirici & Teknoloji Meraklısı 🚀"
+    subtitle: "Software Engineer"
     imageUrl: ""
     imageTitle: "Gökhan Özeloğlu"
     imageWidth: 120
     imageHeight: 120
     buttons:
-      - name: "Yazılar"
+      - name: "Posts"
         url: "/posts/"
-      - name: "Hakkımda"
+      - name: "Tools"
+        url: "/tools/"
+      - name: "About"
         url: "/about/"
-      - name: "Etiketler"
-        url: "/tags/"
 
   socialIcons:
     - name: github
@@ -80,26 +87,22 @@ params:
 menu:
   main:
     - identifier: posts
-      name: Yazılar
+      name: Posts
       url: /posts/
       weight: 10
-    - identifier: archives
-      name: Arşiv
-      url: /archives/
-      weight: 20
-    - identifier: search
-      name: Ara
-      url: /search/
-      weight: 30
-    - identifier: tags
-      name: Etiketler
-      url: /tags/
-      weight: 40
     - identifier: tools
       name: Tools
-      url: /json/
-      weight: 45
+      url: /tools/
+      weight: 20
+    - identifier: archives
+      name: Archive
+      url: /archives/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
     - identifier: about
-      name: Hakkımda
+      name: About
       url: /about/
       weight: 50

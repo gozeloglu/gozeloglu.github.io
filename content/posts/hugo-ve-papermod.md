@@ -1,17 +1,17 @@
 ---
-title: "Hugo ve PaperMod ile Hızlı Başlangıç"
+title: "Quick Start with Hugo and PaperMod"
 date: 2026-08-27T21:30:00+03:00
-draft: false
-tags: ["Hugo", "PaperMod", "Rehber"]
-categories: ["Yazılım"]
-summary: "Hugo ve PaperMod temasının temel özellikleri ve hızlı kullanım ipuçları."
+draft: true
+tags: ["Hugo", "PaperMod", "Guide"]
+categories: ["Software"]
+summary: "An overview of Hugo and key features of the PaperMod theme."
 ---
 
-PaperMod, minimalist, hızlı ve SEO dostu bir Hugo temasıdır.
+PaperMod is a minimalist, fast, and SEO-friendly theme for Hugo.
 
-### Öne Çıkan Özellikler
+### Key Features
 
-- ⚡️ **Hızlı Yükleme:** Sıfır harici bağımlılık, optimize edilmiş CSS ve JS.
-- 🌓 **Koyu / Açık Mod:** Tercihe göre otomatik veya manuel tema geçişi.
-- 🔍 **Canlı Arama:** Fuse.js destekli hızlı site içi arama.
-- 📱 **Mobil Uyumlu:** Tüm cihazlarda temiz ve duyarlı (responsive) tasarım.
+- ⚡️ **Fast Performance:** Zero external dependencies, optimized CSS and JS.
+- 🌓 **Dark / Light Mode:** Automatic system detection or manual theme switcher.
+- 🔍 **Live Search:** Fast site-wide search powered by Fuse.js.
+- 📱 **Mobile Friendly:** Clean and fully responsive design across all devices.

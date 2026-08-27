@@ -1,6 +1,6 @@
 ---
-title: "Arşiv"
+title: "Archive"
 layout: "archives"
 url: "/archives/"
-summary: "Tüm blog yazılarının kronolojik arşivi."
+summary: "Chronological archive of all blog posts."
 ---
