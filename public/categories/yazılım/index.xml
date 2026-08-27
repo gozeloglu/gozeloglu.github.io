@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Yazılım on Gökhan Özeloğlu</title>
-    <link>http://localhost:51410/categories/yaz%C4%B1l%C4%B1m/</link>
+    <link>http://localhost:1313/categories/yaz%C4%B1l%C4%B1m/</link>
     <description>Recent content in Yazılım on Gökhan Özeloğlu</description>
     <generator>Hugo</generator>
     <language>tr-TR</language>
     <lastBuildDate>Thu, 27 Aug 2026 21:30:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:51410/categories/yaz%C4%B1l%C4%B1m/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/yaz%C4%B1l%C4%B1m/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo ve PaperMod ile Hızlı Başlangıç</title>
-      <link>http://localhost:51410/posts/hugo-ve-papermod/</link>
+      <link>http://localhost:1313/posts/hugo-ve-papermod/</link>
       <pubDate>Thu, 27 Aug 2026 21:30:00 +0300</pubDate>
-      <guid>http://localhost:51410/posts/hugo-ve-papermod/</guid>
+      <guid>http://localhost:1313/posts/hugo-ve-papermod/</guid>
       <description>Hugo ve PaperMod temasının temel özellikleri ve hızlı kullanım ipuçları.</description>
     </item>
   </channel>
