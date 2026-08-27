@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Beautifier - Güvenli & Hızlı JSON Düzenleyici</title>
+    <title>JSON Beautifier - Fast & Secure JSON Formatter</title>
     
-    <!-- Tema Titremesini (Flicker) Önleyen Erken Karar Scripti -->
+    <!-- Prevent theme flickering -->
     <script>
         (function() {
             const isDark = localStorage.getItem('theme') === 'dark' || 
@@ -51,24 +51,24 @@
             font-family: 'Fira Code', monospace;
         }
         
-        /* Özel JSON Syntax Highlighting Stilleri */
-        /* Karanlık Tema Renkleri */
-        .dark .json-key { color: #f43f5e; font-weight: 500; }     /* Gül Kırmızı */
-        .dark .json-string { color: #34d399; }                  /* Yeşil */
+        /* JSON Syntax Highlighting Styles */
+        /* Dark Theme Colors */
+        .dark .json-key { color: #f43f5e; font-weight: 500; }     /* Rose Red */
+        .dark .json-string { color: #34d399; }                  /* Green */
         .dark .json-number { color: #fbbf24; }                  /* Amber */
-        .dark .json-boolean { color: #60a5fa; }                 /* Mavi */
-        .dark .json-null { color: #a78bfa; }                    /* Mor */
-        .dark .json-colon { color: #f3f4f6; }                   /* Beyaz */
+        .dark .json-boolean { color: #60a5fa; }                 /* Blue */
+        .dark .json-null { color: #a78bfa; }                    /* Purple */
+        .dark .json-colon { color: #f3f4f6; }                   /* White */
 
-        /* Aydınlık Tema Renkleri */
-        .json-key { color: #be123c; font-weight: 500; }         /* Koyu Gül Kırmızı */
-        .json-string { color: #047857; }                        /* Koyu Yeşil */
-        .json-number { color: #b45309; }                        /* Koyu Amber */
-        .json-boolean { color: #1d4ed8; }                       /* Koyu Mavi */
-        .json-null { color: #6d28d9; }                          /* Koyu Mor */
-        .json-colon { color: #1f2937; }                         /* Koyu Gri */
+        /* Light Theme Colors */
+        .json-key { color: #be123c; font-weight: 500; }         /* Dark Rose Red */
+        .json-string { color: #047857; }                        /* Dark Green */
+        .json-number { color: #b45309; }                        /* Dark Amber */
+        .json-boolean { color: #1d4ed8; }                       /* Dark Blue */
+        .json-null { color: #6d28d9; }                          /* Dark Purple */
+        .json-colon { color: #1f2937; }                         /* Dark Gray */
 
-        /* Özel Scrollbar */
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -92,7 +92,7 @@
     <header class="border-b border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Logo Simge -->
+                <!-- Logo Icon -->
                 <div class="p-2 bg-brand-500 rounded-lg text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -100,24 +100,24 @@
                 </div>
                 <div>
                     <h1 class="font-bold text-lg sm:text-xl bg-gradient-to-r from-brand-600 to-indigo-500 bg-clip-text text-transparent">JSON Beautifier</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">Tamamen Güvenli & Tarayıcı Tabanlı</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">100% Private & Browser-Based</p>
                 </div>
             </div>
 
-            <!-- Sağ Taraf Kontrolleri (Tema Değişimi & Güvenlik Rozeti) -->
+            <!-- Right Controls (Theme Switcher & Privacy Badge) -->
             <div class="flex items-center space-x-3">
                 <span class="hidden md:inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
                     <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>%100 Gizlilik Güvencesi</span>
+                    <span>100% Client-Side Privacy</span>
                 </span>
                 
-                <!-- Karanlık / Aydınlık Mod Butonu -->
-                <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Tema Değiştir">
-                    <!-- Güneş (Aydınlık Mod) -->
+                <!-- Dark / Light Mode Button -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Toggle Theme">
+                    <!-- Sun (Light Mode) -->
                     <svg id="sunIcon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828 0l-.707-.707m12.828-12.828l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
                     </svg>
-                    <!-- Ay (Karanlık Mod) -->
+                    <!-- Moon (Dark Mode) -->
                     <svg id="moonIcon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
@@ -126,113 +126,113 @@
         </div>
     </header>
 
-    <!-- Ana İçerik Bölümü -->
+    <!-- Main Content -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
         
-        <!-- Üst Toolbar -->
+        <!-- Top Toolbar -->
         <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-wrap gap-4 items-center justify-between">
-            <!-- Düzen Seçenekleri -->
+            <!-- Indent Options -->
             <div class="flex flex-wrap items-center gap-3">
                 <div class="flex items-center space-x-2">
-                    <label for="indentSelect" class="text-sm font-medium text-slate-600 dark:text-slate-400">Girinti:</label>
+                    <label for="indentSelect" class="text-sm font-medium text-slate-600 dark:text-slate-400">Indent:</label>
                     <select id="indentSelect" class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-brand-500">
-                        <option value="2" selected>2 Boşluk</option>
-                        <option value="4">4 Boşluk</option>
-                        <option value="tab">Tab Karakteri</option>
+                        <option value="2" selected>2 Spaces</option>
+                        <option value="4">4 Spaces</option>
+                        <option value="tab">Tab Character</option>
                     </select>
                 </div>
                 
-                <!-- Örnek Yükle Butonu -->
+                <!-- Load Sample Button -->
                 <button id="btnSample" class="text-sm px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg transition font-medium flex items-center space-x-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 .364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
-                    <span>Örnek Yükle</span>
+                    <span>Load Sample</span>
                 </button>
             </div>
 
-            <!-- Ana Aksiyon Butonları -->
+            <!-- Action Buttons -->
             <div class="flex items-center gap-2">
                 <button id="btnClear" class="text-sm px-4 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 rounded-lg transition font-medium flex items-center space-x-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
-                    <span>Temizle</span>
+                    <span>Clear</span>
                 </button>
                 <button id="btnMinify" class="text-sm px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg transition font-medium flex items-center space-x-1 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
                     </svg>
-                    <span>Sıkıştır (Minify)</span>
+                    <span>Minify</span>
                 </button>
                 <button id="btnFormat" class="text-sm px-5 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg transition font-medium flex items-center space-x-1.5 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span>Biçimlendir (Beautify)</span>
+                    <span>Beautify</span>
                 </button>
             </div>
         </div>
 
-        <!-- Hata Bildirim Alanı (Varsayılan olarak gizlidir) -->
+        <!-- Error Alert -->
         <div id="errorAlert" class="hidden bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 p-4 rounded-xl flex items-start space-x-3 transition duration-150 animate-shake">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
             <div class="flex-1">
-                <p class="font-semibold text-sm">Geçersiz JSON Biçimi!</p>
+                <p class="font-semibold text-sm">Invalid JSON Format!</p>
                 <p id="errorMessage" class="text-xs mt-1 font-mono opacity-90"></p>
             </div>
         </div>
 
-        <!-- İki Sütunlu Editör Alanı -->
+        <!-- Two Column Editor -->
         <div class="flex-grow grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-[450px]">
             
-            <!-- Sol Sütun: Giriş (Input) -->
+            <!-- Left Column: Raw JSON (Input) -->
             <div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden focus-within:ring-2 focus-within:ring-brand-500/50 transition">
                 <div class="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
-                    <span class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">Ham JSON (Giriş)</span>
-                    <span id="charCountInput" class="text-xs text-slate-400">0 karakter</span>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">Raw JSON (Input)</span>
+                    <span id="charCountInput" class="text-xs text-slate-400">0 characters</span>
                 </div>
                 <textarea id="jsonInput" 
-                    placeholder="JSON verinizi buraya yapıştırın veya yazın... Örn: { &quot;ad&quot;: &quot;Ahmet&quot; }" 
+                    placeholder="Paste or type your JSON here... Example: { &quot;name&quot;: &quot;John Doe&quot; }" 
                     class="flex-grow w-full p-4 bg-transparent outline-none resize-none font-mono text-sm leading-relaxed text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 min-h-[250px] lg:min-h-[400px]"></textarea>
             </div>
 
-            <!-- Sağ Sütun: Çıkış (Output / Highlighted) -->
+            <!-- Right Column: Formatted JSON (Output) -->
             <div class="flex flex-col bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden relative">
                 <div class="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
-                    <span class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">Biçimlendirilmiş JSON (Çıkış)</span>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">Formatted JSON (Output)</span>
                     <div class="flex items-center space-x-2">
-                        <!-- Pano Kopyalama Butonu -->
-                        <button id="btnCopy" class="p-1.5 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition" title="Kopyala">
+                        <!-- Copy Button -->
+                        <button id="btnCopy" class="p-1.5 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition" title="Copy to Clipboard">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                             </svg>
                         </button>
-                        <!-- Dosya İndirme Butonu -->
-                        <button id="btnDownload" class="p-1.5 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition" title="Dosya Olarak İndir">
+                        <!-- Download Button -->
+                        <button id="btnDownload" class="p-1.5 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition" title="Download as File">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
                         </button>
                     </div>
                 </div>
-                <!-- Çıkış Alanı Gösterici -->
+                <!-- Formatted Output Viewer -->
                 <div class="flex-grow p-4 overflow-auto min-h-[250px] lg:min-h-[400px] bg-slate-50/50 dark:bg-slate-900/30">
-                    <pre id="jsonOutput" class="text-sm leading-relaxed whitespace-pre-wrap break-all select-text text-slate-800 dark:text-slate-100"><span class="text-slate-400 dark:text-slate-600 italic">Temiz ve biçimlendirilmiş sonuç burada görüntülenecektir...</span></pre>
+                    <pre id="jsonOutput" class="text-sm leading-relaxed whitespace-pre-wrap break-all select-text text-slate-800 dark:text-slate-100"><span class="text-slate-400 dark:text-slate-600 italic">Clean, formatted result will appear here...</span></pre>
                 </div>
             </div>
 
         </div>
 
-        <!-- Küçük Bilgilendirme Bannerı -->
+        <!-- Privacy Notice Banner -->
         <div class="bg-blue-500/10 border border-blue-500/20 text-blue-700 dark:text-blue-300 p-4 rounded-xl text-xs sm:text-sm leading-relaxed flex items-center space-x-3">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>
-                <strong>Gizlilik Bilgilendirmesi:</strong> Girdiğiniz JSON verileri hiçbir sunucuya iletilmez, yerel çerezlerde depolanmaz. Her şey %100 yerel olarak tarayıcınızın JavaScript motorunda işlenmektedir. Güvenle kullanabilirsiniz.
+                <strong>Privacy Notice:</strong> Your JSON data is never sent to any server or stored in cookies. Everything is processed 100% locally in your browser's JavaScript engine.
             </span>
         </div>
     </main>
@@ -240,15 +240,15 @@
     <!-- Footer -->
     <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
         <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; 2026 JSON Beautifier. Tüm Hakları Saklıdır. Tamamen Client-Side & Açık Kaynak Standartlarında.</p>
+            <p>&copy; 2026 JSON Beautifier. All rights reserved. 100% Client-Side & Open Source Standards.</p>
         </div>
     </footer>
 
-    <!-- Özel Toast / Bildirim Alanı (Güvenli bildirimler için) -->
+    <!-- Toast Notification Container -->
     <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
 
     <script>
-        // DOM Elemanları
+        // DOM Elements
         const themeToggle = document.getElementById('themeToggle');
         const sunIcon = document.getElementById('sunIcon');
         const moonIcon = document.getElementById('moonIcon');
@@ -265,37 +265,36 @@
         const errorMessage = document.getElementById('errorMessage');
         const charCountInput = document.getElementById('charCountInput');
 
-        // Örnek JSON Verisi
+        // Sample JSON Data
         const sampleJSON = {
-            "proje": "JSON Beautifier",
-            "surum": "2.0.0",
-            "durum": "Kararlı",
-            "aktif_mi": true,
-            "gelistirici": {
-                "ad": "Yazılım Geliştirici",
-                "rol": "Full-Stack Developer",
-                "yetenekler": ["HTML", "JavaScript", "Tailwind CSS", "Netlify"]
+            "project": "JSON Beautifier",
+            "version": "2.0.0",
+            "status": "Stable",
+            "active": true,
+            "developer": {
+                "name": "Software Developer",
+                "role": "Full-Stack Developer",
+                "skills": ["HTML", "JavaScript", "Tailwind CSS", "Hugo"]
             },
-            "desteklenen_ozellikler": [
+            "features": [
                 {
-                    "isim": "Biçimlendirme",
-                    "hizli": true
+                    "name": "Formatting",
+                    "fast": true
                 },
                 {
-                    "isim": "Syntax Highlighting",
-                    "tema_destegi": true
+                    "name": "Syntax Highlighting",
+                    "themeSupport": true
                 },
                 {
-                    "isim": "Sıkıştırma (Minification)",
-                    "kayipsiz": true
+                    "name": "Minification",
+                    "lossless": true
                 }
             ],
-            "lisans": null
+            "license": "MIT"
         };
 
-        // --- TEMA YÖNETİMİ ---
+        // --- THEME MANAGEMENT ---
         function initTheme() {
-            // Sınıf zaten head içerisindeki blocking script ile uygulandı, sadece buton ikonlarını senkronize ediyoruz.
             const isDark = document.documentElement.classList.contains('dark');
             if (isDark) {
                 sunIcon.classList.remove('hidden');
@@ -318,16 +317,13 @@
                 sunIcon.classList.remove('hidden');
                 moonIcon.classList.add('hidden');
             }
-            // Yeniden renklendir (tema değiştiğinde renk stilleri güncellenir)
             beautifyJSON();
         });
 
-        // --- JSON RENKLENDİRME (SYNTAX HIGHLIGHTING) ---
+        // --- SYNTAX HIGHLIGHTING ---
         function syntaxHighlight(jsonString) {
-            // HTML karakterlerini encode et
             jsonString = jsonString.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             
-            // JSON elemanlarını regex ile yakalayıp sınıflara böl
             return jsonString.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g, function (match) {
                 let cls = 'json-number';
                 if (/^"/.test(match)) {
@@ -343,26 +339,24 @@
                 }
                 
                 if (cls === 'json-key') {
-                    // Anahtar ve colon (:) ayrımı
                     return `<span class="${cls}">${match.replace(/:$/, '')}</span><span class="json-colon">:</span>`;
                 }
                 return `<span class="${cls}">${match}</span>`;
             });
         }
 
-        // --- ANA FONKSİYONLAR ---
+        // --- MAIN FUNCTIONS ---
 
-        // Karakter Sayacı Güncelleme
+        // Character Count
         jsonInput.addEventListener('input', () => {
             const count = jsonInput.value.length;
-            charCountInput.textContent = `${count.toLocaleString('tr-TR')} karakter`;
+            charCountInput.textContent = `${count.toLocaleString('en-US')} characters`;
         });
 
-        // Hata Bildirimi Göster/Gizle
+        // Error Notifications
         function showError(msg) {
             errorAlert.classList.remove('hidden');
             errorMessage.textContent = msg;
-            // Hafif sarsılma efekti tetiklemesi
             errorAlert.classList.add('animate-shake');
             setTimeout(() => errorAlert.classList.remove('animate-shake'), 500);
         }
@@ -371,7 +365,7 @@
             errorAlert.classList.add('hidden');
         }
 
-        // Toast Bildirimi Oluşturucu (Browser iframelerinde alert alternatifi)
+        // Toast Notifications
         function showToast(message, type = 'success') {
             const toast = document.createElement('div');
             toast.className = `flex items-center space-x-2 px-4 py-3 rounded-lg shadow-lg border text-sm transition-all duration-300 transform translate-y-2 opacity-0
@@ -386,39 +380,31 @@
             toast.innerHTML = `${icon}<span>${message}</span>`;
             document.getElementById('toastContainer').appendChild(toast);
 
-            // Animasyonla göster
             setTimeout(() => {
                 toast.classList.remove('translate-y-2', 'opacity-0');
             }, 10);
 
-            // 3 saniye sonra kaldır
             setTimeout(() => {
                 toast.classList.add('opacity-0', 'translate-y-2');
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
         }
 
-        // JSON Formatlama / Güzelleştirme
+        // JSON Beautifier
         function beautifyJSON() {
             const rawValue = jsonInput.value.trim();
             if (!rawValue) {
-                jsonOutput.innerHTML = `<span class="text-slate-400 dark:text-slate-600 italic">Görüntülenecek veri yok. Önce yukarıya JSON ekleyin.</span>`;
+                jsonOutput.innerHTML = `<span class="text-slate-400 dark:text-slate-600 italic">No data to display. Please enter JSON above.</span>`;
                 hideError();
                 return;
             }
 
             try {
-                // Girdiyi parse et (Validate yapıyoruz)
                 const parsed = JSON.parse(rawValue);
-                
-                // Girinti tercihini al
                 const indentOption = indentSelect.value;
                 const indent = indentOption === 'tab' ? '\t' : parseInt(indentOption);
-
-                // Formatla
                 const formattedJSON = JSON.stringify(parsed, null, indent);
                 
-                // Renklendirip ekrana bas
                 jsonOutput.innerHTML = syntaxHighlight(formattedJSON);
                 hideError();
             } catch (error) {
@@ -426,80 +412,78 @@
             }
         }
 
-        // JSON Sıkıştırma (Minify)
+        // JSON Minify
         function minifyJSON() {
             const rawValue = jsonInput.value.trim();
             if (!rawValue) {
-                showToast("Lütfen önce sıkıştırılacak bir JSON girin.", "error");
+                showToast("Please enter JSON to minify first.", "error");
                 return;
             }
 
             try {
                 const parsed = JSON.parse(rawValue);
-                const minified = JSON.stringify(parsed); // Girinti yok
+                const minified = JSON.stringify(parsed);
                 
                 jsonOutput.innerHTML = syntaxHighlight(minified);
                 hideError();
-                showToast("JSON başarıyla sıkıştırıldı!");
+                showToast("JSON successfully minified!");
             } catch (error) {
                 showError(error.message);
-                showToast("Geçersiz JSON, sıkıştırma başarısız.", "error");
+                showToast("Invalid JSON, minification failed.", "error");
             }
         }
 
-        // Girişi Temizleme
+        // Clear
         function clearAll() {
             jsonInput.value = '';
-            jsonOutput.innerHTML = `<span class="text-slate-400 dark:text-slate-600 italic">Temiz ve biçimlendirilmiş sonuç burada görüntülenecektir...</span>`;
-            charCountInput.textContent = '0 karakter';
+            jsonOutput.innerHTML = `<span class="text-slate-400 dark:text-slate-600 italic">Clean, formatted result will appear here...</span>`;
+            charCountInput.textContent = '0 characters';
             hideError();
-            showToast("Alanlar temizlendi.");
+            showToast("All fields cleared.");
         }
 
-        // Örnek JSON Yükleme
+        // Load Sample
         function loadSample() {
             const sampleString = JSON.stringify(sampleJSON, null, 2);
             jsonInput.value = sampleString;
-            charCountInput.textContent = `${sampleString.length.toLocaleString('tr-TR')} karakter`;
+            charCountInput.textContent = `${sampleString.length.toLocaleString('en-US')} characters`;
             beautifyJSON();
-            showToast("Örnek JSON başarıyla yüklendi.");
+            showToast("Sample JSON successfully loaded.");
         }
 
-        // Panoya Kopyalama (Clipboard)
+        // Copy to Clipboard
         function copyToClipboard() {
-            // Sadece renklendirilmemiş düz metni kopyalamak için çıktı içindeki metni alıyoruz
             const rawFormattedText = jsonOutput.innerText;
-            if (rawFormattedText.includes("Görüntülenecek veri yok") || rawFormattedText.includes("sonuç burada görüntülenecektir")) {
-                showToast("Kopyalanacak geçerli bir JSON bulunamadı.", "error");
+            if (rawFormattedText.includes("No data to display") || rawFormattedText.includes("result will appear here")) {
+                showToast("No valid JSON found to copy.", "error");
                 return;
             }
 
-            // Güvenli kopyalama yöntemi (iframe uyumluluğu için)
             const tempTextArea = document.createElement("textarea");
             tempTextArea.value = rawFormattedText;
-            tempTextArea.style.position = "fixed"; // Arka planda gizle
+            tempTextArea.style.position = "fixed";
             document.body.appendChild(tempTextArea);
             tempTextArea.select();
             
             try {
                 const successful = document.execCommand('copy');
                 if (successful) {
-                    showToast("JSON panoya kopyalandı!");
+                    showToast("JSON copied to clipboard!");
                 } else {
-                    showToast("Kopyalama başarısız oldu.", "error");
+                    showToast("Failed to copy.", "error");
                 }
             } catch (err) {
-                showToast("Kopyalanamadı: " + err, "error");
+                showToast("Could not copy: " + err, "error");
             }
             
             document.body.removeChild(tempTextArea);
         }
 
-        // Dosya İndirme
+        // Download JSON
         function downloadJSON() {
             const rawFormattedText = jsonOutput.innerText;
-            if (rawFormattedText.includes("Görüntülenecek veri yok") || rawFormattedText.includes("sonuç burada görüntülenecektir")) {
-                showToast("İndirilecek geçerli bir veri bulunmuyor.", "error");
+            if (rawFormattedText.includes("No data to display") || rawFormattedText.includes("result will appear here")) {
+                showToast("No valid data to download.", "error");
                 return;
             }
 
@@ -513,13 +497,13 @@
                 link.click();
                 document.body.removeChild(link);
                 URL.revokeObjectURL(url);
-                showToast("JSON dosyası indirildi!");
+                showToast("JSON file downloaded!");
             } catch (err) {
-                showToast("Dosya indirme hatası: " + err, "error");
+                showToast("File download error: " + err, "error");
             }
         }
 
-        // --- OLAY DİNLEYİCİLERİ ---
+        // Event Listeners
         btnFormat.addEventListener('click', beautifyJSON);
         btnMinify.addEventListener('click', minifyJSON);
         btnClear.addEventListener('click', clearAll);
@@ -528,7 +512,6 @@
         btnDownload.addEventListener('click', downloadJSON);
         indentSelect.addEventListener('change', beautifyJSON);
 
-        // Sayfa Yapısı (DOM) hazır olduğunda hemen tetikle (window.onload gecikmesini önler)
         document.addEventListener('DOMContentLoaded', function() {
             initTheme();
         });

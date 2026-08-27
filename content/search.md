@@ -1,7 +1,7 @@
 ---
-title: "Ara"
+title: "Search"
 layout: "search"
 url: "/search/"
-summary: "Site içi arama sayfası."
-placeholder: "Yazılarda veya etiketlerde arayın..."
+summary: "Search posts across the website."
+placeholder: "Search posts..."
 ---

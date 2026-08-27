@@ -1,17 +1,21 @@
 ---
-title: "Hakkımda"
-description: "Hakkımda kısa bilgi ve iletişim detayları."
+title: "About"
+description: "Software Engineer specializing in Go, backend systems, and databases."
 ---
 
-## Merhaba! 👋
+## Hello! 👋
 
-Ben Gökhan. Yazılım geliştirme, açık kaynak projeler ve teknoloji trendleri üzerine çalışıyorum.
+I'm Gökhan, a Software Engineer passionate about building robust, scalable backend systems and distributed services.
 
-Bu blogda öğrendiklerimi, ilgimi çeken teknolojileri ve deneyimlerimi paylaşıyorum.
+I primarily focus on **Go**, **Databases & Storage Systems**, and **Backend Architecture**. I enjoy designing high-performance microservices, optimizing database performance, and working on clean system design.
 
-### İletişim
+On this blog, I document what I learn, share insights from my software journey, and publish tools I build.
 
-- **E-posta:** gokhan {at} ozeloglu {dot} io
+---
+
+### Connect With Me
+
+- **Email:** gokhan {at} ozeloglu {dot} io
 - **GitHub:** [github.com/gozeloglu](https://github.com/gozeloglu)
 - **LinkedIn:** [linkedin.com/in/gokhanozeloglu/](https://linkedin.com/in/gokhanozeloglu/)
 - **Bluesky:** [bsky.app/profile/ozeloglu.io](https://bsky.app/profile/ozeloglu.io)
